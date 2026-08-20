@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--primary-bg);
+
+  padding: 1rem 2rem;
+
+  border-bottom: 1px solid var(--border);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  list-style: none;
+}
+
+li {
+    color: var(--text-primary);
+}
+
+li:hover {
+  color: var(--gold);
+}
+
+.wordmark {
+  font-family: var(--brand-font);
+  color: var(--gold);
+  font-size: 2rem;
+}
