@@ -1,6 +1,10 @@
+import Hero from "./Hero"
+
 function Home() {
     return (
-        <h1>After Hours Welcome</h1>
+        <>
+        <Hero/>
+        </>
     )
 }
 
