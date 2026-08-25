@@ -2,18 +2,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: sticky;
+  top: 0;
+  z-index: 3;
   background-color: var(--primary-bg);
-
   padding: 1rem 2rem;
-
   border-bottom: 1px solid var(--border);
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
 }
 
 li {
@@ -28,4 +22,45 @@ li:hover {
   font-family: var(--brand-font);
   color: var(--gold);
   font-size: 2rem;
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    gap: 2rem;
+        margin: 0;
+    padding: 0;
+}
+
+.nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0;
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid var(--border);
+}
+
+.menu-toggle {
+  background: transparent;
+  color: var(--gold);
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+    }
+    .menu-toggle {
+      display: none;
+    }
 }

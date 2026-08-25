@@ -1,45 +1,74 @@
 .hero {
     width: 100%;
-    height: 90vh;
-    background-image: url(../assets/after-hours-hero.png);
-    background-position: center 65%;
-    display: flex;
-    align-items: center;
+    height: 600px;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.4) 45%,
+            rgba(0, 0, 0, 0.1) 75%,
+            transparent 100%
+        ),
+        url(../assets/hero-image-mobile.png);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+.hero + .featured-cocktails {
+    padding-top: 120px;
 }
 
 .hero-title::after {
   content: "";
   display: block;
-  width: 240px;
+  width: 220px;
   height: 2px;
   background-color: var(--gold);
   margin-top: 1rem;
 }
 
 .hero-content {
-  width: 50%;
-  padding-left: 5%;
-  transform: translateY(7%);
+    max-width: 260px;
+    padding-left: 1rem;
+    text-align: center;
+    
+}
+
+.hero-copy {
+    transform: translateY(25%);
+    max-width: 260px;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
+    margin-left: 0.5rem;
 }
 
 .hero h1 {
     margin-top: 0;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .hero-title {
     font-family: var(--heading-font);
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     font-weight: 500;
     color: var(--text-primary);
-    margin: 0 0 1rem;
+    margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .hero-subtitle {
     font-family: var(--heading-font);
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--gold);
-    margin: 0 0 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .hero-intro {
@@ -48,12 +77,27 @@
     color: var(--text-secondary);
     max-width: 400px;
     line-height: 1.6;
-    margin: 0 0 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-weight: 500;
 }
 
 .hero-actions {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     gap: 1rem;
+
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-actions button {
+    width: 290px;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
 }
 
 .primary-cta {
@@ -64,7 +108,6 @@
 }
 
 .primary-cta svg {
-    margin-right: 0.5rem;
     color: var(--gold);
 }
 
@@ -144,3 +187,108 @@
   transition: all 0.3s ease;
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .hero {
+        height: 800px;
+        background-size: 100% auto;
+        background-position: 70% 70%;
+        position: relative;
+    }
+
+    .hero-content {
+        max-width: 500px;
+        padding-left: 3rem;
+        padding-top: 4rem;
+    }
+
+    .hero-copy {
+        transform: none;
+        max-width: 360px;
+    }   
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-intro {
+        font-size: 1.1rem;
+        max-width: 340px;
+    }
+
+    .hero-actions {
+        position: absolute;
+        bottom: 80px;
+        left: 25%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .hero-actions button {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .hero {
+    width: 100%;
+    height: 90vh;
+    background-image: url("../assets/after-hours-hero.png");
+    background-size: cover;
+    background-position: 75% 60%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    }
+
+    .hero-content {
+        width: 50%;
+        max-width: none;
+        padding-left: 5%;
+        text-align: left;
+        background-color: transparent;
+    }
+
+    .hero-copy {
+        transform: none;
+        max-width: 500px;
+        background-color: transparent;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-intro {
+        max-width: 500px;
+    }
+
+    .hero-actions {
+        position: static;
+        transform: none;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        margin-top: 1.5rem;
+    }
+
+    .hero-actions button {
+        width: auto;
+    }
+}

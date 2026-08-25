@@ -8,10 +8,12 @@ function Hero() {
     return (
         <section className="hero">
             <div className="hero-content">
-                <h1 className="hero-title">After Hours</h1>
-                <p className="hero-subtitle">Where The Night Begins</p>
-                <p className="hero-intro">Discover classic cocktails, 
-                    unexpected favourites and new drinks worth staying up for.</p>
+                <div className="hero-copy">
+                    <h1 className="hero-title">After Hours</h1>
+                    <p className="hero-subtitle">Where The Night Begins</p>
+                    <p className="hero-intro">Discover classic cocktails, 
+                        unexpected favourites and new drinks worth staying up for.</p>
+                </div>
 
                 <div className="hero-actions">
                     <button className="primary-cta">
@@ -33,3 +35,4 @@ function Hero() {
 }
 
 export default Hero
+
