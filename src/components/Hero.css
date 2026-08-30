@@ -1,3 +1,8 @@
+/* *************************
+   HERO SECTION
+   ************************* */
+
+/* Main Hero section and background image */
 .hero {
     width: 100%;
     height: 600px;
@@ -19,49 +24,76 @@
     position: relative;
 }
 
+
+/* Adds extra space between the Hero and Featured Cocktails */
 .hero + .featured-cocktails {
     padding-top: 120px;
 }
 
-.hero-title::after {
-  content: "";
-  display: block;
-  width: 220px;
-  height: 2px;
-  background-color: var(--gold);
-  margin-top: 1rem;
-}
 
+/* *************************
+   HERO CONTENT
+   ************************* */
+
+/* Main wrapper containing the Hero text and buttons */
 .hero-content {
     max-width: 260px;
     padding-left: 1rem;
     text-align: center;
-    
 }
 
+
+/* Hero text block */
 .hero-copy {
+    /* Moves the text block down from its normal position */
     transform: translateY(25%);
+
+    /* Keeps the text block compact */
     max-width: 260px;
+
+    /* Adds a semi transparent dark background behind the text */
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: multiply;
+
+    /* Small gap from the left edge */
     margin-left: 0.5rem;
 }
 
-.hero h1 {
-    margin-top: 0;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
 
+/* *************************
+   HERO TEXT
+   ************************* */
+
+/* Main "After Hours" heading */
 .hero-title {
     font-family: var(--heading-font);
     font-size: 2.5rem;
     font-weight: 500;
     color: var(--text-primary);
     margin-right: 0.5rem;
+}
+
+
+/* Gold decorative line underneath the main heading */
+.hero-title::after { 
+    content: "";
+    display: block;
+    width: 220px;
+    height: 2px;
+    background-color: var(--gold);
+    margin-top: 1rem;
+}
+
+
+/* General h1 spacing within the Hero */
+.hero h1 {
+    margin-top: 0;
+    margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
 
+
+/* "Where The Night Begins" subtitle */
 .hero-subtitle {
     font-family: var(--heading-font);
     font-size: 1.1rem;
@@ -71,6 +103,8 @@
     margin-right: 0.5rem;
 }
 
+
+/* Introductory Hero paragraph */
 .hero-intro {
     font-family: var(--primary-font);
     font-size: 1rem;
@@ -82,6 +116,12 @@
     font-weight: 500;
 }
 
+
+/* *************************
+   HERO ACTIONS
+   ************************* */
+
+/* Container holding the three Hero buttons */
 .hero-actions {
     display: flex;
     align-items: center;
@@ -94,23 +134,54 @@
     transform: translateX(-50%);
 }
 
+
+
+
+/* Shared layout, typography and background for Hero buttons */
 .hero-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    min-height: 52px;
+    padding: 0.75rem 1.25rem;
+
+    font-family: var(--primary-font);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
     width: 290px;
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: multiply;
 }
 
+
+/* *************************
+   PRIMARY CTA
+   ************************* */
+
+/* Find A Cocktail button */
 .primary-cta {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--gold);
-  box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
 }
 
+
+/* Martini icon */
 .primary-cta svg {
     color: var(--gold);
 }
 
+
+/* Find A Cocktail hover state */
 .primary-cta:hover {
     background: var(--gold-hover);
     color: var(--primary-bg);
@@ -118,40 +189,61 @@
     box-shadow: 0 0 10px rgba(201, 164, 92, 1);
 }
 
+
+/* Martini icon hover state */
 .primary-cta:hover svg {
     color: var(--primary-bg);
 }
 
+
+/* *************************
+   SECONDARY CTA
+   ************************* */
+
+/* My Ingredients button */
 .secondary-cta {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--teal);
-  box-shadow: 0 0 10px rgba(79, 155, 150, 0.3);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--teal);
+    box-shadow: 0 0 10px rgba(79, 155, 150, 0.3);
 }
 
+
+/* Leaf icon */
 .secondary-cta svg {
     margin-right: 0.5rem;
     color: var(--teal);
 }
 
+
+/* My Ingredients hover state */
 .secondary-cta:hover {
     background-color: var(--teal);
     border: 1px solid var(--teal);
     box-shadow: 0 0 10px rgba(164, 208, 205, 0.5);
-
 }
 
+
+/* Leaf icon hover state */
 .secondary-cta:hover svg {
     color: var(--text-primary);
 }
 
+
+/* *************************
+   AI CTA
+   ************************* */
+
+/* Ask The Bartender button */
 .ai-cta {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--teal);
-  box-shadow: 0 0 10px rgba(201, 164, 92, 0.3);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--teal);
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.3);
 }
 
+
+/* Ask The Bartender hover state */
 .ai-cta:hover {
     background: var(--gold-hover);
     color: var(--primary-bg);
@@ -159,36 +251,27 @@
     box-shadow: 0 0 10px rgb(164, 208, 205, 0.5);
 }
 
+
+/* Magic wand icon */
 .ai-cta svg {
     margin-right: 0.5rem;
     color: var(--gold);
 }
 
+
+/* Magic wand icon hover state */
 .ai-cta:hover svg {
     color: var(--primary-bg);
 }
 
-.hero-actions button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 
-  min-height: 52px;
-  padding: 0.75rem 1.25rem;
-
-  font-family: var(--primary-font);
-  font-size: 0.95rem;
-  font-weight: 500;
-
-  border-radius: 8px;
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
+/* *************************
+   TABLET (768px – 991px)
+   ************************* */
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
+    /* Tablet Hero sizing and background positioning */
     .hero {
         height: 800px;
         background-size: 100% auto;
@@ -196,60 +279,83 @@
         position: relative;
     }
 
+
+    /* Tablet Hero content positioning */
     .hero-content {
         max-width: 500px;
         padding-left: 3rem;
         padding-top: 4rem;
     }
 
+
+    /* Tablet Hero text block */
     .hero-copy {
         transform: none;
         max-width: 360px;
-    }   
+    }
 
+
+    /* Tablet Hero heading */
     .hero-title {
         font-size: 3.5rem;
     }
 
+
+    /* Tablet Hero subtitle */
     .hero-subtitle {
         font-size: 1.5rem;
     }
 
+
+    /* Tablet Hero intro */
     .hero-intro {
         font-size: 1.1rem;
         max-width: 340px;
     }
 
+
+    /* Tablet Hero buttons */
     .hero-actions {
         position: absolute;
         bottom: 80px;
         left: 25%;
-        
+
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
     }
 
+
+    /* Tablet button width */
     .hero-actions button {
         width: 300px;
     }
 }
 
+
+/* ************************
+   DESKTOP (992px+)
+   ************************ */
+
 @media screen and (min-width: 992px) {
 
+    /* Desktop Hero background and layout */
     .hero {
-    width: 100%;
-    height: 90vh;
-    background-image: url("../assets/after-hours-hero.png");
-    background-size: cover;
-    background-position: 75% 60%;
-    background-repeat: no-repeat;
+        width: 100%;
+        height: 90vh;
 
-    display: flex;
-    align-items: center;
+        background-image: url("../assets/after-hours-hero.png");
+        background-size: cover;
+        background-position: 75% 60%;
+        background-repeat: no-repeat;
+
+        display: flex;
+        align-items: center;
     }
 
+
+    /* Desktop Hero content */
     .hero-content {
         width: 50%;
         max-width: none;
@@ -258,24 +364,34 @@
         background-color: transparent;
     }
 
+
+    /* Desktop Hero text block */
     .hero-copy {
         transform: none;
         max-width: 500px;
         background-color: transparent;
     }
 
+
+    /* Desktop Hero heading */
     .hero-title {
         font-size: 4.5rem;
     }
 
+
+    /* Desktop Hero subtitle */
     .hero-subtitle {
         font-size: 1.5rem;
     }
 
+
+    /* Desktop Hero intro */
     .hero-intro {
         max-width: 500px;
     }
 
+
+    /* Desktop Hero buttons */
     .hero-actions {
         position: static;
         transform: none;
@@ -288,6 +404,8 @@
         margin-top: 1.5rem;
     }
 
+
+    /* Desktop button width adjusts to content */
     .hero-actions button {
         width: auto;
     }

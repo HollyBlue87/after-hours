@@ -54,6 +54,7 @@ function FeaturedCocktails() {
                             return (
                                 <CocktailCard
                                     key={cocktail.idDrink}
+                                    id={cocktail.idDrink}
                                     name={cocktail.strDrink}
                                     image={cocktail.strDrinkThumb}
                                 />

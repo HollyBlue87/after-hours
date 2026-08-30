@@ -1,0 +1,124 @@
+AFTER HOURS — CLASS NAME REFERENCE
+==================================
+
+HOME
+----
+No classNames directly in Home.jsx
+
+
+HERO
+----
+- hero
+- hero-content
+- hero-copy
+- hero-title
+- hero-subtitle
+- hero-intro
+- hero-actions
+- primary-cta
+- secondary-cta
+- ai-cta
+
+
+NAVBAR
+------
+- wordmark
+- menu-toggle
+- nav-links
+- open
+
+
+FEATURED COCKTAILS
+------------------
+- featured-cocktails
+- section-heading
+- featured-title
+- carousel-wrapper
+- scroll-button
+- featured-container
+
+
+FEATURED NON-ALCOHOLIC
+---------------------
+- featured-cocktails
+- section-heading
+- featured-title
+- carousel-wrapper
+- scroll-button
+- featured-container
+
+
+COCKTAIL CARD
+-------------
+- cocktail-card
+- image-area
+- favourite-button
+- cocktail-image
+- card-content
+- cocktail-title
+- cocktail-name
+- alcohol-status
+- drink-category
+- view-cocktail
+
+
+REUSABLE CLASSNAMES
+===================
+
+SECTION / HEADING
+-----------------
+- section-heading
+- featured-title
+- featured-cocktails
+
+CAROUSEL
+--------
+- carousel-wrapper
+- scroll-button
+- featured-container
+
+COCKTAIL CARD
+-------------
+- cocktail-card
+- image-area
+- favourite-button
+- cocktail-image
+- card-content
+- cocktail-title
+- cocktail-name
+- alcohol-status
+- drink-category
+- view-cocktail
+
+
+WHERE THEY ARE CURRENTLY REUSED
+================================
+
+featured-cocktails
+- FeaturedCocktails
+- FeaturedNonAlcoholic
+
+section-heading
+- FeaturedCocktails
+- FeaturedNonAlcoholic
+
+featured-title
+- FeaturedCocktails
+- FeaturedNonAlcoholic
+
+carousel-wrapper
+- FeaturedCocktails
+- FeaturedNonAlcoholic
+
+scroll-button
+- FeaturedCocktails
+- FeaturedNonAlcoholic
+
+featured-container
+- FeaturedCocktails
+- FeaturedNonAlcoholic
+
+CocktailCard classes
+- FeaturedCocktails
+- FeaturedNonAlcoholic
+- Search results (CocktailCard is rendered there)

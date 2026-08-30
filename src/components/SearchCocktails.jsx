@@ -1,104 +1,124 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CocktailCard from "./CocktailCard";
 import "./SearchCocktails.css";
 import searchCocktailImage from "../assets/search-hero.png";
+import searchCocktailImageDesktop from "../assets/search-hero-desktop.png";
 
-function SearchCocktails () {
+function SearchCocktails() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [cocktails, setCocktails] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
 
-    const [searchTerm, setSearchTerm] = useState("");
-    const [cocktails, setCocktails] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
-    const [hasSearched, setHasSearched] = useState(false);
+  const handleSearch = async (e) => {
+    e.preventDefault();
 
-    const handleSearch = async(e) => {
-        e.preventDefault();
+    setError("");
+    setCocktails([]);
 
-        setError("");
-        setCocktails([]);
-
-        if (searchTerm === "") {
-            setError("Please enter a cocktail name!")
-            return
-        }
+    if (searchTerm === "") {
+      setError("Please enter a cocktail name!");
+      return;
+    }
 
     setLoading(true);
     setHasSearched(true);
 
     try {
-        const response = await fetch(
-            `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
-        );
-    
-        const data = await response.json();
+      const response = await fetch(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`,
+      );
 
-        setCocktails(data.drinks ?? []);
-    }
-    catch (error) {
-        setError("Something went wrong. Please try again");
-    }
+      const data = await response.json();
 
-    finally {
-        setLoading(false);
+      setCocktails(data.drinks ?? []);
+    } catch (error) {
+      setError("Something went wrong. Please try again");
+    } finally {
+      setLoading(false);
     }
-    
-    }
+  };
 
-    return(
-        <>
-            <div className="search-intro">
+  return (
+    <>
 
-            <div className="search-image">
+      <div className="search-statement">
+          <span></span>
+          <h2>What are you sipping tonight?</h2>
+          <span></span>
+      </div>
+      <div className="search-intro">
+
+        <div className="search-image">
+          <picture>
+            <source
+              media="(min-width: 1200px)"
+              srcSet={searchCocktailImageDesktop}
+            />
+
             <img
-                src={searchCocktailImage}
-                alt="Glowing turquoise cocktail in a sophisticated tropical bar"
-             />
-            </div>
-
-            <div className="search-content">
-                <h1>Search For a Cocktail</h1>
-                <p>Find your next favourite drink!</p>
-
-                <form onSubmit={handleSearch}>
-                    <input
-                        type="text"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                    <button type="submit">
-                        Search
-                    </button>
-                </form>
-            </div>
+              src={searchCocktailImage}
+              alt="Glowing turquoise cocktail in a sophisticated tropical bar"
+            />
+          </picture>
         </div>
+        <div className="search-content">
+          <div className="search-heading">
+            <span></span>
 
-        <div className="search-cocktails-container">
+            <h2 className="search-title">Search For a Cocktail</h2>
 
-            {error !== "" && (
-                <p>{error}</p>
-            )}
+            <span></span>
+          </div>
+          <div className="search-form-container">
+            <p>Find your next favourite drink!</p>
 
-            {loading && (
-                <p>Searching for cocktails...</p>
-            )}
-
-            {hasSearched && cocktails.length === 0 && searchTerm !== "" && (
-                <p>No cocktails found. Try another search.</p>
-            )}
-            {cocktails.length > 0 && (
-                cocktails.map(cocktail => {
-                    return (
-                        <CocktailCard
-                            key={cocktail.idDrink}
-                            name={cocktail.strDrink}
-                            image={cocktail.strDrinkThumb}
-                        />
-                    )
-                })
-            )}
+            <form className="search-form" onSubmit={handleSearch}>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <button type="submit">Search</button>
+            </form>
+          </div>
         </div>
+      </div>
+
+      <div className="search-cocktails-container">
+        {hasSearched && (
+          <div className="search-heading">
+            <span className="results-line"></span>
+
+            <h2 className="search-title">Search Results</h2>
+
+            <span className="results-line"></span>
+          </div>
+        )}
+
+        {error !== "" && <p>{error}</p>}
+
+        {loading && <p>Searching for cocktails...</p>}
+
+        {hasSearched && cocktails.length === 0 && searchTerm !== "" && (
+          <p>No cocktails found. Try another search.</p>
+        )}
+        <div className="search-results-grid">
+          {cocktails.length > 0 &&
+            cocktails.map((cocktail) => {
+              return (
+                <CocktailCard
+                  key={cocktail.idDrink}
+                  name={cocktail.strDrink}
+                  image={cocktail.strDrinkThumb}
+                />
+              );
+            })}
+        </div>
+      </div>
     </>
-    )
+  );
 }
 
-export default SearchCocktails
+export default SearchCocktails;

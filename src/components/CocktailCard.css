@@ -1,3 +1,5 @@
+/* Styles for featured sections on the homepage */
+
 .featured-cocktails {
     padding: 2rem 1rem;
 }
@@ -32,6 +34,41 @@
     filter: drop-shadow(0 0 4px var(--gold));
 }
 
+.featured-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.scroll-button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--gold);
+    font-size: 1.3rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.scroll-button:hover {
+    background: var(--gold);
+    color: var(--primary-bg);
+}
+
+
+/* Cocktail card styles * REUSABLE CARDS* */
 .cocktail-card {
     width: 300px;
     border: 1px solid var(--teal);
@@ -111,36 +148,4 @@
     font-weight: 500;
 }
 
-.featured-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    flex: 1;
-    min-width: 0;
-}
-
-.carousel-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-}
-
-.scroll-button {
-    width: 42px;
-    height: 42px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    background: transparent;
-    color: var(--gold);
-    font-size: 1.3rem;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.scroll-button:hover {
-    background: var(--gold);
-    color: var(--primary-bg);
-}
 
