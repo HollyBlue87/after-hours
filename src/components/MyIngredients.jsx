@@ -14,6 +14,11 @@ function MyIngredients () {
             setError("Please enter an ingredient!");
             return;
             }
+        
+        if (ingredient.includes(searchTerm)) {
+            setError("You've already added that ingredient!")
+            return;
+        }
 
         setIngredient([...ingredient, searchTerm])
         setSearchTerm("")
@@ -38,6 +43,8 @@ function MyIngredients () {
                 >Add Ingredient
                 </button>
             </form>
+
+            <p>{error}</p>
 
             {ingredient.map((item) => (
                 <p>{item} <button onClick={() => removeIngredient(item)}>X</button></p>
