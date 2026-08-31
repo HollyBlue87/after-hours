@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import CocktailCard from "./CocktailCard";
 import "./SearchCocktails.css";
 import searchCocktailImage from "../assets/search-hero.png";
-import searchCocktailImageDesktop from "../assets/search-hero-desktop.png";
 
 function SearchCocktails() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -58,7 +57,7 @@ function SearchCocktails() {
             />
 
             <img
-              src={searchCocktailImage}
+              src={searchCocktailImageDesktop}
               alt="Glowing turquoise cocktail in a sophisticated tropical bar"
             />
           </picture>
