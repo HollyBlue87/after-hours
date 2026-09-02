@@ -35,6 +35,7 @@
     text-align: left;
     background-color: rgba(0, 0, 0, 0.2);
     background-blend-mode: multiply;
+    position: static;
 }
 
 .ingredients-hero h1 {
@@ -43,4 +44,217 @@
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
+}
+
+.ingredients-hero {
+    position: relative;
+}
+
+.ingredients-hero form {
+    position: absolute;
+    bottom: 2rem;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredient-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+}
+
+.ingredient-search input {
+    width: 220px;
+    height: 42px;
+    padding: 0.5rem 1rem;
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background-color: rgba(17, 16, 15, 0.85);
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.ingredient-search button {
+    height: 42px;
+    padding: 0 1rem;
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background-color: rgba(79, 155, 150, 0.9);
+    border: 1px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ingredient-search button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.ingredient-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.ingredient-list p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0.5rem 0.9rem;
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background-color: rgba(79, 155, 150, 0.25);
+    border: 1px solid var(--teal);
+    border-radius: 50px;
+    text-transform: capitalize;
+}
+
+.ingredient-list p button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-family: var(--primary-font);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.find-cocktails-btn {
+    display: block;
+    margin: 2rem auto 0;
+}
+
+.find-cocktails-btn {
+    display: block;
+    margin: 2rem auto 0;
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--primary-font);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cocktail-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .ingredients-hero {
+        height: 60vh;
+        background-position: center;
+        align-items: flex-start;
+    }
+
+    .ingredients-hero .hero-content {
+        max-width: 500px;
+        padding-left: 4rem;
+        padding-top: 7rem;
+    }
+
+    .ingredients-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .ingredients-hero .hero-subtitle {
+        font-size: 1.4rem;
+        max-width: 400px;
+    }
+
+    .ingredients-hero form {
+        left: 10%;
+        right: 10%;
+    }
+
+    .ingredients-hero .ingredient-search input {
+        width: 320px;
+    }
+
+    .cocktail-results {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .ingredients-hero {
+        height: 70vh;
+        background-position: center;
+    }
+
+    .ingredients-hero .hero-content {
+        max-width: 550px;
+        padding-left: 5%;
+        padding-top: 5rem;
+    }
+
+    .ingredients-hero h1 {
+        font-size: 4rem;
+    }
+
+    .ingredients-hero .hero-subtitle {
+        font-size: 1.5rem;
+        max-width: 450px;
+    }
+
+    .ingredients-hero .ingredient-search input {
+        width: 400px;
+        height: 46px;
+    }
+
+    .ingredients-hero .ingredient-search button {
+        height: 46px;
+        padding: 0 1.25rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .ingredients-hero {
+        height: 80vh;
+    }
+
+    .cocktail-results {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
 }

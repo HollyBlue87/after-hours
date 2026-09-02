@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CocktailCard from "./CocktailCard";
 import "./SearchCocktails.css";
-import searchCocktailImage from "../assets/search-hero.png";
+import MyIngredients from "./MyIngredients";
 
 function SearchCocktails() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -38,86 +38,67 @@ function SearchCocktails() {
       setLoading(false);
     }
   };
+}
 
   return (
     <>
+        <section className="search-hero">
 
-      <div className="search-statement">
-          <span></span>
-          <h2>What are you sipping tonight?</h2>
-          <span></span>
-      </div>
-      <div className="search-intro">
-
-        <div className="search-image">
-          <picture>
-            <source
-              media="(min-width: 1200px)"
-              srcSet={searchCocktailImageDesktop}
-            />
-
-            <img
-              src={searchCocktailImageDesktop}
-              alt="Glowing turquoise cocktail in a sophisticated tropical bar"
-            />
-          </picture>
-        </div>
-        <div className="search-content">
-          <div className="search-heading">
-            <span></span>
-
-            <h2 className="search-title">Search For a Cocktail</h2>
-
-            <span></span>
-          </div>
-          <div className="search-form-container">
-            <p>Find your next favourite drink!</p>
+            <div className="hero-content">
+                <h1>Search Cocktails</h1>
+                <p>What are you sipping tonight?</p>
+            </div>
 
             <form className="search-form" onSubmit={handleSearch}>
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <button type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div className="search-cocktails-container">
-        {hasSearched && (
-          <div className="search-heading">
-            <span className="results-line"></span>
-
-            <h2 className="search-title">Search Results</h2>
-
-            <span className="results-line"></span>
-          </div>
-        )}
-
-        {error !== "" && <p>{error}</p>}
-
-        {loading && <p>Searching for cocktails...</p>}
-
-        {hasSearched && cocktails.length === 0 && searchTerm !== "" && (
-          <p>No cocktails found. Try another search.</p>
-        )}
-        <div className="search-results-grid">
-          {cocktails.length > 0 &&
-            cocktails.map((cocktail) => {
-              return (
-                <CocktailCard
-                  key={cocktail.idDrink}
-                  name={cocktail.strDrink}
-                  image={cocktail.strDrinkThumb}
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                 />
-              );
-            })}
-        </div>
-      </div>
-    </>
-  );
-}
 
-export default SearchCocktails;
+                <button type="submit">Search</button>
+            </form>
+
+        </section>
+
+        <main className="search-cocktails-container">
+
+            {hasSearched && (
+                <div className="search-heading">
+                    <span className="results-line"></span>
+
+                    <h2 className="search-title">Search Results</h2>
+
+                    <span className="results-line"></span>
+                </div>
+            )}
+
+            {error !== "" && <p>{error}</p>}
+
+            {loading && <p>Searching for cocktails...</p>}
+
+            {hasSearched && cocktails.length === 0 && searchTerm !== "" && (
+                <p>No cocktails found. Try another search.</p>
+            )}
+
+            <div className="search-results-grid">
+                {cocktails.length > 0 &&
+                    cocktails.map((cocktail) => {
+                        return (
+                            <CocktailCard
+                                key={cocktail.idDrink}
+                                id={cocktail.idDrink}
+                                name={cocktail.strDrink}
+                                image={cocktail.strDrinkThumb}
+                                alcoholType={cocktail.strAlcoholic}
+                                category={cocktail.strCategory}
+                            />
+                        );
+                    })}
+            </div>
+
+        </main>
+    </>
+);
+
+export default MyIngredients

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CocktailCard from "./CocktailCard";
+import CocktailCardx from "./CocktailCard";
 import "./MyIngredients.css"
 
 function MyIngredients() {
@@ -99,45 +99,49 @@ function MyIngredients() {
                     What's calling your glass tonight?
                 </p>
             </div>
+            <form className="ingredient-search" onSubmit={addIngredient}>
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+
+                    <button>Add</button>
+                </form>
         </section>
 
         <main className="ingredients-content">
 
-            <form onSubmit={addIngredient}>
-                <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-
-                <button>Add Ingredient</button>
-            </form>
-
             <p>{error}</p>
 
-            {ingredient.map((item) => (
-                <p key={item}>
-                    {item}{" "}
-                    <button onClick={() => removeIngredient(item)}>
-                        X
-                    </button>
-                </p>
-            ))}
+            <div className="ingredient-list">
+                {ingredient.map((item) => (
+                    <p key={item}>
+                        {item}{" "}
+                        <button onClick={() => removeIngredient(item)}>
+                            X
+                        </button>
+                    </p>
+                ))}
+            </div>
 
-            <button onClick={findCocktails}>
+            <button className="find-cocktails-btn" onClick={findCocktails}>
                 Find My Cocktails
             </button>
 
             {cocktails.length > 0 &&
-                cocktails.map((cocktail) => {
-                    return (
-                        <CocktailCard
-                            key={cocktail.idDrink}
-                            name={cocktail.strDrink}
-                            image={cocktail.strDrinkThumb}
-                        />
-                    );
-                })
+                <div className="cocktail-results">
+                    {cocktails.map((cocktail) => {
+                        return (
+                            <CocktailCard
+                                key={cocktail.idDrink}
+                                id={cocktail.idDrink}
+                                name={cocktail.strDrink}
+                                image={cocktail.strDrinkThumb}
+                            />
+                        );
+                    })}
+                </div>
             }
 
         </main>

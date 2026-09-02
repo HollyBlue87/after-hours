@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
 import "./CocktailDetails.css";
 import "./Hero.css";
+import DetailsCard from "./DetailsCard";
 
 function CocktailDetails() {
     const { id } = useParams();
@@ -39,65 +38,28 @@ function CocktailDetails() {
     }, [id]);
 
     return (
-        <>
-            {cocktail && (
-            <div className="cocktail-details">
-                <div className="detail-heading">
-                <span></span>
-                    <h1>{cocktail.strDrink}</h1> 
-                <span></span>
-                </div>
+            cocktail && (
+            <div className="card-container">
+                <DetailsCard
+                    type="cocktail"
+                    name={cocktail.strDrink}
+                    image={cocktail.strDrinkThumb}
+                    alcoholType={cocktail.strAlcoholic}
+                    glassType={cocktail.strGlass}
+                />
 
-                <div className="recipe-layout">
+                <DetailsCard
+                    type="ingredients"
+                    ingredients={ingredients}
+                />
 
-                    <div className="recipe-image">
-                        <img
-                            src={cocktail.strDrinkThumb}
-                            alt={cocktail.strDrink}
-                        />
-                    </div>
-
-                    <div className="recipe-info">
-                        <section>
-                            <div className="detail-heading">
-                                <span></span>
-                                <h2>Ingredients</h2>
-                                <span></span>
-                            </div>
-                            <ul>
-                                {ingredients.map((ingredient) => (
-                                    <li key={ingredient.ingredient}>
-                                        {ingredient.ingredient} • <span>{ingredient.measurement}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </section>
-
-                        <div className="alternative-ingredients">
-                            <p>Missing an ingredient?</p>
-                            <p>Ask The Bartender for a suitable alternative.</p>
-
-                            <button className="ai-cta">
-                                <FontAwesomeIcon icon={faWandMagicSparkles} />
-                                Ask The Bartender
-                            </button>
-                        </div>
-                    </div>
-                    <section className="instructions">
-                        <div className="detail-heading">
-                            <span></span>
-                            <h2>Instructions</h2>
-                            <span></span>
-                        </div>
-
-                        <p>{cocktail.strInstructions}</p>
-                    </section>
-                </div>
-
+                <DetailsCard
+                    type="instructions"
+                    instructions={cocktail.strInstructions}
+                />
             </div>
-            )}
-        </>
-    );
+            )
+        )
 }
 
 export default CocktailDetails;

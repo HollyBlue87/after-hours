@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navbar.css"
@@ -14,9 +15,9 @@ function Navbar() {
       </button>
 
       <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-        <li>Home</li>
-        <li>Cocktails</li>
-        <li>Ingredients</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/search">Cocktails</Link></li>
+        <li><Link to="/ingredients">Ingredients</Link></li>
         <li>Favourites</li>
       </ul>
     </nav>
