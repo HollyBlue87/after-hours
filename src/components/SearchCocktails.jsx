@@ -43,20 +43,20 @@ function SearchCocktails() {
     <>
         <section className="search-hero">
 
-            <div className="hero-content">
-                <h1>Search Cocktails</h1>
-                <p>What are you sipping tonight?</p>
-            </div>
+          <div className="hero-content">
+              <h1>Search Cocktails</h1>
+              <p>What are you sipping tonight?</p>
 
-            <form className="search-form" onSubmit={handleSearch}>
-                <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
+              <form className="search-form" onSubmit={handleSearch}>
+                  <input
+                      type="text"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                  />
 
-                <button type="submit">Search</button>
-            </form>
+                  <button type="submit">Search</button>
+              </form>
+          </div>
 
         </section>
 

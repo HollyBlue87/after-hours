@@ -1,6 +1,60 @@
 .search-hero {
-    min-height: 500px;
-    background-image: url("../assets/search-hero.png");
+    width: 100%;
+    height: 60vh;
+    background-image: url("../assets/search-hero-mobile.png");
     background-size: cover;
-    background-position: center;
+    background-position: 25% center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.search-hero .hero-content {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 1rem;
+    padding-top: 4rem;
+    text-align: center;
+    color: var(--gold);
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+}
+
+.search-form input {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 0.5rem 1rem;
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background-color: rgba(17, 16, 15, 0.85);
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.search-form button {
+    height: 42px;
+    padding: 0 1rem;
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background-color: rgba(79, 155, 150, 0.9);
+    border: 1px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
