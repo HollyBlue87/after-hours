@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CocktailCard from "./CocktailCard";
 import "./SearchCocktails.css";
-import MyIngredients from "./MyIngredients";
+import searchCocktailImage from "../assets/search-hero.png";
 
 function SearchCocktails() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -38,7 +38,6 @@ function SearchCocktails() {
       setLoading(false);
     }
   };
-}
 
   return (
     <>
@@ -100,5 +99,6 @@ function SearchCocktails() {
         </main>
     </>
 );
+}
 
-export default MyIngredients
+export default SearchCocktails
