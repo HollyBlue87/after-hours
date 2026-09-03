@@ -1,60 +1,83 @@
 .search-hero {
-    width: 100%;
-    height: 60vh;
-    background-image: url("../assets/search-hero-mobile.png");
-    background-size: cover;
-    background-position: 25% center;
+    background-image: url(../assets/search-hero-mobile2.png);
+    background-position: left bottom;
     background-repeat: no-repeat;
-    position: relative;
+    height: 70vh;
+    background-size: cover;
+
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .search-hero .hero-content {
-    width: 50%;
-    margin-left: auto;
-    margin-right: 1rem;
-    padding-top: 4rem;
-    text-align: center;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(20px);
+}
+
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 2rem 0 0.5rem 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    font-weight: 500;
     color: var(--gold);
+    margin: 0;
 }
 
-.search-form {
+.form-container {
+    width: 310px;
+    margin-top: auto;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    align-self: center;
+    transform: translateY(-80px);
+}
+
+.form-container form {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    gap: 0;
 }
 
-.search-form input {
-    width: auto;
+.form-container input {
     flex: 1;
     min-width: 0;
     height: 42px;
     padding: 0.5rem 1rem;
+
     font-family: var(--primary-font);
     font-size: 0.9rem;
     color: var(--text-primary);
-    background-color: rgba(17, 16, 15, 0.85);
+
+    background-color: rgba(17, 16, 15, 0.6);
     border: 1px solid var(--gold);
-    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
-    border-radius: 8px 0 0 8px;
     outline: none;
+
+    border-radius: 8px 0 0 8px;
 }
 
-.search-form button {
+.form-container button {
     height: 42px;
     padding: 0 1rem;
+
     font-family: var(--primary-font);
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-primary);
+
     background-color: rgba(79, 155, 150, 0.9);
     border: 1px solid var(--gold);
+
     border-radius: 0 8px 8px 0;
-    box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
     cursor: pointer;
-    transition: all 0.3s ease;
 }

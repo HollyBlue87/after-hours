@@ -46,7 +46,9 @@ function SearchCocktails() {
           <div className="hero-content">
               <h1>Search Cocktails</h1>
               <p>What are you sipping tonight?</p>
+          </div>
 
+          <div className="form-container">
               <form className="search-form" onSubmit={handleSearch}>
                   <input
                       type="text"
