@@ -1,7 +1,6 @@
 import { useState } from "react";
 import CocktailCard from "./CocktailCard";
 import "./SearchCocktails.css";
-import searchCocktailImage from "../assets/search-hero.png";
 
 function SearchCocktails() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,18 +45,17 @@ function SearchCocktails() {
           <div className="hero-content">
               <h1>Search Cocktails</h1>
               <p>What are you sipping tonight?</p>
-          </div>
+                <div className="form-container">
+                    <form className="search-form" onSubmit={handleSearch}>
+                        <input
+                            type="text"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
 
-          <div className="form-container">
-              <form className="search-form" onSubmit={handleSearch}>
-                  <input
-                      type="text"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                  />
-
-                  <button type="submit">Search</button>
-              </form>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
           </div>
 
         </section>

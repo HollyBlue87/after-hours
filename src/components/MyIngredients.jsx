@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CocktailCardx from "./CocktailCard";
+import CocktailCard from "./CocktailCard";
 import "./MyIngredients.css"
 
 function MyIngredients() {

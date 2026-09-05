@@ -1,6 +1,15 @@
 .search-hero {
-    background-image: url(../assets/search-hero-mobile2.png);
-    background-position: left bottom;
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.4) 45%,
+            rgba(0, 0, 0, 0.1) 75%,
+            transparent 100%
+        ),
+        url(../assets/search-hero-mobile.png);
+
+    background-position: left center;
     background-repeat: no-repeat;
     height: 70vh;
     background-size: cover;
@@ -10,12 +19,12 @@
 }
 
 .search-hero .hero-content {
-  width: 230px;
+  width: 280px;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   background-color: rgba(0, 0, 0, 0.3);
-  transform: translateY(20px);
+  transform: translate(1rem, 30px);
 }
 
 .hero-content h1 {
@@ -23,7 +32,7 @@
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin: 2rem 0 0.5rem 1rem;
+    margin: 2rem 0 0.5rem;
     line-height: 1.2;
 }
 
@@ -36,12 +45,9 @@
 }
 
 .form-container {
-    width: 310px;
-    margin-top: auto;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    width: 260px;
+    margin-top: 1rem;
     align-self: center;
-    transform: translateY(-80px);
 }
 
 .form-container form {
@@ -74,10 +80,91 @@
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-primary);
-
-    background-color: rgba(79, 155, 150, 0.9);
+    background-color: rgba(19, 129, 123, 0.9);
     border: 1px solid var(--gold);
 
     border-radius: 0 8px 8px 0;
     cursor: pointer;
+}
+
+.search-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.search-title {
+    color: var(--gold);
+    font-size: 1.8rem;
+}
+
+.search-heading .results-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+    );
+    filter: drop-shadow(0 0 4px var(--gold));
+}
+
+
+
+.search-results-grid {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+
+    .search-hero {
+        background-image: url(../assets/search-hero.png);
+        background-position: 60% center;
+    }
+
+    .search-hero .hero-content {
+        width: 440px;
+        text-align: center;
+    }
+
+    .search-hero .hero-content h1 {
+        font-size: 3.5rem;
+        margin-left: 0;
+    }
+
+    .search-hero .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    .form-container {
+        width: 440px;
+        transform: none;
+    }
+
+    .form-container input {
+        height: 50px;
+    }
+
+    .form-container button {
+        height: 50px;
+        padding: 0 1.5rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .search-hero .hero-content {
+        transform: translate(90px, 40px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .search-hero .hero-content {
+        transform: translate(120px, 60px);
+    }
 }
