@@ -3,6 +3,7 @@ import Home from "./components/Home"
 import MyIngredients from "./components/MyIngredients"
 import SearchCocktails from "./components/SearchCocktails"
 import CocktailDetails from "./components/CocktailDetails"
+import Favourites from "./components/Favourites"
 import { Routes, Route } from "react-router-dom"
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/search" element={<SearchCocktails />} />
         <Route path="/cocktail/:id" element={<CocktailDetails />} />
         <Route path="/ingredients" element={<MyIngredients/>} />
+        <Route path="/favourites" element={<Favourites/>} />
       </Routes>
     </>
   )

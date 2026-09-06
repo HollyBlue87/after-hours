@@ -18,7 +18,7 @@ function Navbar() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/search">Cocktails</Link></li>
         <li><Link to="/ingredients">Ingredients</Link></li>
-        <li>Favourites</li>
+        <li><Link to="/favourites">Favourites</Link></li>
       </ul>
     </nav>
   )
