@@ -62,3 +62,5 @@ return (
     </div>
 );
 }
+
+export default CocktailCard;

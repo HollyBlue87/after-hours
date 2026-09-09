@@ -12,6 +12,11 @@ function MyIngredients() {
         setError("");
         e.preventDefault();
 
+        if (ingredient.length === 0) {
+            setError("Please add at least one ingredient!");
+            return;
+        }
+
         if (searchTerm === "") {
             setError("Please enter an ingredient!");
             return;
