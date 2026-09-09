@@ -4,13 +4,13 @@ import CocktailCard from "./CocktailCard";
 
 function Favourites() {
     const favouriteContext = useContext(FavouriteContext);
-    console.log("Favourites page:", favouriteContext.favourites);
     const favouriteCards = favouriteContext.favourites.map((favourite) => {
     return (
         <CocktailCard
             id={favourite.id}
             name={favourite.name}
             image={favourite.image}
+            isFavourite
         />
     )
 });

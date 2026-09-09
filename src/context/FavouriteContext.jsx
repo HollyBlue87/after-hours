@@ -13,8 +13,13 @@ function FavouriteProvider({ children }) {
 
             setFavourites([...favourites, cocktail]);
         };
+
+        const removeFavourite = (cocktail) => {
+            setFavourites(
+                favourites.filter((favourite) => favourite.id !== cocktail.id))
+        }
     return (
-        <FavouriteContext.Provider value={{ favourites, setFavourites, addFavourite }}>
+        <FavouriteContext.Provider value={{ favourites, setFavourites, addFavourite, removeFavourite}}>
             {children}
         </FavouriteContext.Provider>
     );
