@@ -5,14 +5,16 @@ import SearchCocktails from "./components/SearchCocktails"
 import CocktailDetails from "./components/CocktailDetails"
 import Favourites from "./components/Favourites"
 import { Routes, Route } from "react-router-dom"
+import { useState } from "react";
 
 function App() {
+  const [isBartenderOpen, setIsBartenderOpen] = useState(false);
   return (
     <>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setIsBartenderOpen={setIsBartenderOpen} />} />
         <Route path="/search" element={<SearchCocktails />} />
         <Route path="/cocktail/:id" element={<CocktailDetails />} />
         <Route path="/ingredients" element={<MyIngredients/>} />

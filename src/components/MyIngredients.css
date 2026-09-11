@@ -9,7 +9,7 @@
             rgba(0, 0, 0, 0.1) 75%,
             transparent 100%
         ),
-        url("../assets/my-ingredients-hero.png");
+        url("../assets/my-ingredients-hero-mobile.png");
     background-size: cover;
     background-position: 65% center;
     background-repeat: no-repeat;
@@ -21,17 +21,18 @@
 
 .ingredients-hero .hero-subtitle {
     font-family: var(--heading-font);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--gold);
     margin: 0 0 1rem;
-    max-width: 280px;
+    max-width: none;
+    white-space: nowrap;
 }
 
 .ingredients-hero .hero-content {
-    max-width: 400px;
+    width: 280px;
     padding-left: 1rem;
-    padding-top: 3.7rem;
+    padding-top: 0;
     text-align: left;
     background-color: rgba(0, 0, 0, 0.2);
     background-blend-mode: multiply;
@@ -40,7 +41,7 @@
 
 .ingredients-hero h1 {
     font-family: var(--heading-font);
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
@@ -51,12 +52,8 @@
 }
 
 .ingredients-hero form {
-    position: absolute;
-    bottom: 2rem;
-    left: 5%;
-    right: 5%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -171,15 +168,29 @@
 
 @media screen and (min-width: 768px) {
     .ingredients-hero {
-        height: 60vh;
-        background-position: center;
-        align-items: flex-start;
+        background-image:
+            linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.65) 0%,
+                rgba(0, 0, 0, 0.4) 45%,
+                rgba(0, 0, 0, 0.1) 75%,
+                transparent 100%
+            ),
+            url("../assets/my-ingredients-hero.png");
     }
 
     .ingredients-hero .hero-content {
-        max-width: 500px;
-        padding-left: 4rem;
-        padding-top: 7rem;
+        width: 400px;
+        padding-left: 3rem;
+        padding-top: 5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .ingredients-hero .hero-content {
+        width: 500px;
+        padding-left: 5rem;
+        padding-top: 5rem;
     }
 
     .ingredients-hero h1 {
@@ -187,74 +198,16 @@
     }
 
     .ingredients-hero .hero-subtitle {
-        font-size: 1.4rem;
-        max-width: 400px;
-    }
-
-    .ingredients-hero form {
-        left: 10%;
-        right: 10%;
+        font-size: 1.2rem;
     }
 
     .ingredients-hero .ingredient-search input {
-        width: 320px;
-    }
-
-    .cocktail-results {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-}
-
-@media screen and (min-width: 992px) {
-
-    .ingredients-hero {
-        height: 70vh;
-        background-position: center;
-    }
-
-    .ingredients-hero .hero-content {
-        max-width: 550px;
-        padding-left: 5%;
-        padding-top: 5rem;
-    }
-
-    .ingredients-hero h1 {
-        font-size: 4rem;
-    }
-
-    .ingredients-hero .hero-subtitle {
-        font-size: 1.5rem;
-        max-width: 450px;
-    }
-
-    .ingredients-hero .ingredient-search input {
-        width: 400px;
+        width: 280px;
         height: 46px;
     }
 
     .ingredients-hero .ingredient-search button {
         height: 46px;
-        padding: 0 1.25rem;
     }
 }
 
-@media screen and (min-width: 1200px) {
-    .ingredients-hero {
-        height: 80vh;
-    }
-
-    .cocktail-results {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-    }
-}

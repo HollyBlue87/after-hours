@@ -100,19 +100,20 @@ function MyIngredients() {
         <section className="ingredients-hero">
             <div className="hero-content">
                 <h1>My Ingredients</h1>
+
                 <p className="hero-subtitle">
                     What's calling your glass tonight?
                 </p>
-            </div>
-            <form className="ingredient-search" onSubmit={addIngredient}>
+
+                <form className="ingredient-search" onSubmit={addIngredient}>
                     <input
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
-
                     <button>Add</button>
                 </form>
+            </div>
         </section>
 
         <main className="ingredients-content">

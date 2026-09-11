@@ -1,9 +1,21 @@
-import { createContext, useState, useContext} from "react";
+import { createContext, useState, useContext, useEffect} from "react";
 
 const FavouriteContext = createContext();
 
 function FavouriteProvider({ children }) {
-    const [favourites, setFavourites] = useState([])
+    const [favourites, setFavourites] = useState(() => {
+    const savedFavourites = localStorage.getItem("favourites");
+
+    if (savedFavourites) {
+        return JSON.parse(savedFavourites);
+        }
+
+        return [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("favourites", JSON.stringify(favourites));
+    }, [favourites]);
 
         const addFavourite = (cocktail) => {
 
@@ -11,7 +23,7 @@ function FavouriteProvider({ children }) {
                 return;
             }
 
-            setFavourites([...favourites, cocktail]);
+            setFavourites([...favourites, cocktail]);x
         };
 
         const removeFavourite = (cocktail) => {
