@@ -5,6 +5,7 @@ import { faLeaf } from "@fortawesome/free-solid-svg-icons"
 import { faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
 
 function Hero({ setIsBartenderOpen }) {
+    console.log("Bartender setter:", setIsBartenderOpen);
     return (
         <section className="hero">
             <div className="hero-content">

@@ -2,10 +2,10 @@ import Hero from "./Hero"
 import FeaturedCocktails from "./FeaturedCocktails";
 import FeaturedNonAlcoholic from "./FeaturedNonAlcoholic"
 
-function Home() {
+function Home({ setIsBartenderOpen }) {
     return (
         <>
-        <Hero/>
+        <Hero setIsBartenderOpen={setIsBartenderOpen} />
         <FeaturedCocktails/>
         <FeaturedNonAlcoholic/>
         </>
