@@ -65,10 +65,22 @@ function Bartender({ setIsBartenderOpen }) {
     });
 
     async function handleRecommendation() {
-        const response = await fetch("/api/test");
+        console.log("Recommendation button clicked");
+
+        const response = await fetch("/api/bartender", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                drinkTypes,
+                spirit,
+            }),
+        });
+
         const data = await response.json();
 
-        setRecommendation(data.message);
+        setRecommendation(data.recommendation);
     }
 
     return (
