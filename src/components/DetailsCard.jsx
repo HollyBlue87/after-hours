@@ -7,7 +7,7 @@ import { faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import cardCoverImage from "../assets/card-cover-image.png";
 
-function DetailsCard({ type, name, image, alcoholType, glassType, ingredients, instructions}) {
+function DetailsCard({ type, name, image, alcoholType, glassType, ingredients, instructions, setIsBartenderOpen, setBartenderMode, setBartenderCocktail, mode }) {
 
     const [isFlipped, setIsFlipped] = useState(false);
 
@@ -84,7 +84,17 @@ function DetailsCard({ type, name, image, alcoholType, glassType, ingredients, i
                 
                 <p>Missing an ingredient? Ask the bartender for an alternative.</p>
 
-                <button className="ai-cta">
+                <button
+                    className="ai-cta"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setBartenderMode(mode);
+                        setBartenderCocktail({
+                            name: name,
+                            ingredients: ingredients
+                        });
+                        setIsBartenderOpen(true);
+                    }}>
                     <FontAwesomeIcon icon={faWandMagicSparkles} />
                     Ask The Bartender
                 </button>

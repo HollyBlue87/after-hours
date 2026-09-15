@@ -4,7 +4,7 @@ import "./CocktailDetails.css";
 import "./Hero.css";
 import DetailsCard from "./DetailsCard";
 
-function CocktailDetails() {
+function CocktailDetails({ setIsBartenderOpen, setBartenderMode, setBartenderCocktail }) {
     const { id } = useParams();
     const [cocktail, setCocktail] = useState(null);
     const [ingredients, setIngredients] = useState([]);
@@ -50,7 +50,12 @@ function CocktailDetails() {
 
                 <DetailsCard
                     type="ingredients"
+                    name={cocktail.strDrink}
                     ingredients={ingredients}
+                    setIsBartenderOpen={setIsBartenderOpen}
+                    setBartenderMode={setBartenderMode}
+                    setBartenderCocktail={setBartenderCocktail}
+                    mode="missing"
                 />
 
                 <DetailsCard
