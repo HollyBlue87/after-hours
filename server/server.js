@@ -16,7 +16,7 @@ app.get("/api/test", (req, res) => {
 app.post("/api/bartender", async (req, res) => {
     console.log(req.body);
 
-    const { drinkTypes, spirit, mode, cocktail, missingIngredient } = req.body;
+    const { drinkTypes, spirit, mode, cocktail, missingIngredient, messages } = req.body;
 
     if (mode === "missing") {
         const prompt = `
@@ -54,6 +54,75 @@ app.post("/api/bartender", async (req, res) => {
         return;
     }
 
+    if (mode === "chat") {
+        const cocktailResponse = await fetch(
+            "http://localhost:3001/api/cocktails"
+        );
+
+        const allCocktails = await cocktailResponse.json();
+
+        const cocktailDetails = allCocktails.map((cocktail) => {
+            const ingredients = [];
+
+            for (let i = 1; i <= 15; i++) {
+                const currentIngredient = cocktail[`strIngredient${i}`];
+
+                if (currentIngredient) {
+                    ingredients.push(currentIngredient);
+                }
+            }
+
+            return {
+                name: cocktail.strDrink,
+                ingredients: ingredients
+            };
+        });
+
+        const conversation = messages.map((message) =>
+            `${message.sender}: ${message.text}`
+        ).join("\n");
+
+        const prompt = `
+            You are the bartender at After Hours, a friendly and knowledgeable cocktail bar.
+
+            Have a natural, friendly conversation with the customer.
+            Respond like a real bartender having a conversation, not like a search engine or a form.
+
+            Keep responses short and conversational, usually 2-4 sentences.
+            When recommending a drink, recommend only ONE cocktail at a time.
+            Do not give lists of cocktail options unless the customer specifically asks for alternatives.
+            Remember what the customer has already told you.
+            If they change their preferences, adapt your suggestions.
+
+            Do not use Markdown, bullet points, headings, or labels.
+            Write naturally as if speaking directly to the customer.
+
+            You may recommend cocktails from this list only:
+
+            ${cocktailDetails.map((cocktail) =>
+                `${cocktail.name}: ${cocktail.ingredients.join(", ")}`
+            ).join("\n")}
+
+            Conversation so far:
+
+            ${conversation}
+
+            Respond naturally to the customer's latest message.
+            Do not use labels such as "Cocktail:", "Why:", or "Ingredients:".
+            Do not invent cocktails that are not in the list.
+        `;
+
+        const response = await ai.models.generateContent({
+            model: "gemini-3.6-flash",
+            contents: prompt,
+        });
+
+        res.json({
+            recommendation: response.candidates[0].content.parts[0].text
+        });
+
+        return;
+    }
 
     const cocktailResponse = await fetch(
         "http://localhost:3001/api/cocktails"
@@ -79,7 +148,11 @@ app.post("/api/bartender", async (req, res) => {
         return cocktailIngredients.includes(spirit.toLowerCase());
     });
 
-    const cocktailDetails = eligibleCocktails.map((cocktail) => {
+    const randomCocktails = [...eligibleCocktails]
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 10);
+
+    const cocktailDetails = randomCocktails.map((cocktail) => {
         const ingredients = [];
 
         for (let i = 1; i <= 15; i++) {
@@ -95,6 +168,9 @@ app.post("/api/bartender", async (req, res) => {
             ingredients: ingredients
         };
     });
+
+    console.log("Eligible cocktails:", cocktailDetails.length);
+    console.log(cocktailDetails.slice(0, 10));
 
     const prompt = `
         You are the bartender for a cocktail recommendation app.

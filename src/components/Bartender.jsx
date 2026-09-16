@@ -1,12 +1,25 @@
 import "./Bartender.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
 
-    const [drinkTypes, setDrinkTypes] = useState([]);
-    const [spirit, setSpirit] = useState("");
-    const [recommendation, setRecommendation] = useState("");
     const [missingIngredient, setMissingIngredient] = useState("");
+    const [messages, setMessages] = useState([
+        {
+            sender: "bartender",
+            text: "Evening. What can I pour you?"
+        }
+    ]);
+    const [userMessage, setUserMessage] = useState("");
+    const [isThinking, setIsThinking] = useState(false);
+    const chatMessagesRef = useRef(null);
+
+    useEffect(() => {
+        if (chatMessagesRef.current) {
+            chatMessagesRef.current.scrollTop =
+                chatMessagesRef.current.scrollHeight;
+        }
+    }, [messages]);
 
     const spiritOptions = [
     "Vodka",
@@ -18,15 +31,15 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
     ];
 
 
-    function toggleDrinkType(type) {
-        if (drinkTypes.includes(type)) {
-            setDrinkTypes(
-                drinkTypes.filter(
-                    (currentType) => currentType !== type
-                )
-            );
+    function addQuickPick(pick) {
+        if (userMessage.includes(pick)) {
+            return;
+        }
+
+        if (userMessage.trim() === "") {
+            setUserMessage(pick);
         } else {
-            setDrinkTypes([...drinkTypes, type]);
+            setUserMessage(`${userMessage}, ${pick}`);
         }
     }
 
@@ -44,8 +57,8 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
             <button
                 key={type}
                 type="button"
-                onClick={() => toggleDrinkType(type)}
-                className={drinkTypes.includes(type) ? "selected" : ""}
+                onClick={() => addQuickPick(type)}
+                className=""
             >
                 {type}
             </button>
@@ -57,32 +70,79 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
             <button
                 key={option}
                 type="button"
-                onClick={() => setSpirit(option)}
-                className={spirit === option ? "selected" : ""}
+                onClick={() => addQuickPick(option)}
+                className=""
             >
                 {option}
             </button>
         )
     });
 
-    async function handleRecommendation() {
-        console.log("Recommendation button clicked");
+    async function handleSendMessage() {
+        if (userMessage.trim() === "") {
+            return;
+        }
 
-        const response = await fetch("/api/bartender", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                drinkTypes,
-                spirit,
-            }),
-        });
+        setIsThinking(true);
 
-        const data = await response.json();
+        const newUserMessage = {
+            sender: "user",
+            text: userMessage
+        };
 
-        setRecommendation(data.recommendation);
+        const updatedMessages = [
+            ...messages,
+            newUserMessage
+        ];
+
+        setMessages(updatedMessages);
+        setUserMessage("");
+
+        try {
+            const response = await fetch("/api/bartender", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    mode: "chat",
+                    messages: updatedMessages
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            setIsThinking(false);
+
+            const bartenderMessage = {
+                sender: "bartender",
+                text: data.recommendation
+            };
+
+            setMessages([
+                ...updatedMessages,
+                bartenderMessage
+            ]);
+
+        } catch (error) {
+            console.error("Bartender request failed:", error);
+
+            setIsThinking(false);
+
+            setMessages([
+                ...updatedMessages,
+                {
+                    sender: "bartender",
+                    text: "Sorry, I'm a little busy behind the bar right now. Please try again in a moment."
+                }
+            ]);
+        }
     }
+
 
     async function handleAlternative() {
         const response = await fetch("/api/bartender", {
@@ -97,34 +157,73 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
             }),
         });
         const data = await response.json();
-        setRecommendation(data.recommendation);
+
+        setMessages([
+            ...messages,
+            {
+                sender: "bartender",
+                text: data.recommendation
+            }
+        ]);
     }
 
     return (
         <div className="bartender-modal">
             <h2>Ask The Bartender</h2>
 
+            <div className="bartender-chat">
+
+                <div className="chat-messages" ref={chatMessagesRef}>
+                    {messages.map((message, index) => (
+                        <p key={index} className={message.sender}>
+                            {message.text}
+                        </p>
+                    ))}
+                    
+                    {isThinking && (
+                        <p className="bartender thinking">
+                            Bartender is thinking...
+                        </p>
+                    )}
+                </div>
+
+                <div className="chat-input">
+                    <input
+                        type="text"
+                        placeholder="Tell me what you're craving..."
+                        value={userMessage}
+                        onChange={(e) => setUserMessage(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                                handleSendMessage();
+                            }
+                        }}
+                    />
+
+                    <button
+                        type="button"
+                        onClick={handleSendMessage}
+                    >
+                        Send
+                    </button>
+                </div>
+
+            </div>
+
             {mode === "recommend" && (
                 <>
-                    <h3>What are you craving?</h3>
+                    <div className="quick-picks">
+                        <h3>Quick picks</h3>
 
-                    <div className="drink-type-options">
-                        {selectDrink}
+                        <div className="drink-type-options">
+                            {selectDrink}
+                        </div>
+
+                        <div className="spirit-options">
+                            {selectSpirit}
+                        </div>
                     </div>
-
-                    <div className="spirit-options">
-                        {selectSpirit}
-                    </div>
-
-                    <button onClick={handleRecommendation}>
-                        Recommend My Cocktail
-                    </button>
                 </>
-            )}
-
-
-            {recommendation && (
-                <p>{recommendation}</p>
             )}
 
             {mode === "missing" && (
@@ -162,8 +261,12 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
                 </>
             )}
 
-            <button onClick={() => setIsBartenderOpen(false)}>
-                Minimise
+            <button
+                className="bartender-close"
+                onClick={() => setIsBartenderOpen(false)}
+                aria-label="Close bartender"
+            >
+                ×
             </button>
         </div>
     );
