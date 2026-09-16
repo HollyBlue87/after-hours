@@ -18,7 +18,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home setIsBartenderOpen={setIsBartenderOpen} />} />
+        <Route path="/" element={<Home 
+          setIsBartenderOpen={setIsBartenderOpen}
+          setBartenderMode={setBartenderMode}/>}/>
         <Route path="/search" element={<SearchCocktails />} />
         <Route path="/cocktail/:id" element={
           <CocktailDetails 

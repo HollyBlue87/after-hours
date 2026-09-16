@@ -4,8 +4,7 @@ import { faMartiniGlass } from "@fortawesome/free-solid-svg-icons"
 import { faLeaf } from "@fortawesome/free-solid-svg-icons"
 import { faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
 
-function Hero({ setIsBartenderOpen }) {
-    console.log("Bartender setter:", setIsBartenderOpen);
+function Hero({ setIsBartenderOpen, setBartenderMode }) {
     return (
         <section className="hero">
             <div className="hero-content">
@@ -25,7 +24,7 @@ function Hero({ setIsBartenderOpen }) {
                         <FontAwesomeIcon icon={faLeaf} />
                         My Ingredients
                         </button>
-                    <button className="ai-cta" onClick={() => setIsBartenderOpen(true)}>
+                    <button className="ai-cta" onClick={() => {setIsBartenderOpen(true); setBartenderMode("recommend");}}>
                         <FontAwesomeIcon icon={faWandMagicSparkles} />
                         Ask The Bartender
                         </button>

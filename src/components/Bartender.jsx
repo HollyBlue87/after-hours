@@ -145,6 +145,8 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
 
 
     async function handleAlternative() {
+        setIsThinking(true);
+
         const response = await fetch("/api/bartender", {
             method: "POST",
             headers: {
@@ -157,6 +159,8 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
             }),
         });
         const data = await response.json();
+
+        setIsThinking(false);
 
         setMessages([
             ...messages,

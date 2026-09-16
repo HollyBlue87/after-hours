@@ -41,6 +41,12 @@
     border-color: var(--gold-hover);
 }
 
+.missing-ingredient-options .selected {
+    background-color: var(--gold-hover);
+    color: var(--primary-bg);
+    border-color: var(--gold-hover);
+}
+
 .drink-type-options,
 .spirit-options {
     display: flex;
