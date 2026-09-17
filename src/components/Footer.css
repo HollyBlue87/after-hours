@@ -1,0 +1,48 @@
+.footer {
+    background-color: var(--nav-footer-colour);
+    color: var(--text-primary);
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-brand {
+    margin-bottom: 1.5rem;
+}
+
+.footer-wordmark {
+    font-family: var(--brand-font);
+    color: var(--gold);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.footer-brand p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-nav a:hover {
+    color: var(--gold-hover);
+}
+
+.footer-copyright {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin: 0;
+}

@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMartiniGlass } from "@fortawesome/free-solid-svg-icons"
 import { faLeaf } from "@fortawesome/free-solid-svg-icons"
 import { faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from "react-router-dom";
 
 function Hero({ setIsBartenderOpen, setBartenderMode }) {
+    const navigate = useNavigate();
     return (
         <section className="hero">
             <div className="hero-content">
@@ -16,11 +18,15 @@ function Hero({ setIsBartenderOpen, setBartenderMode }) {
                 </div>
 
                 <div className="hero-actions">
-                    <button className="primary-cta">
+                    <button
+                        className="primary-cta"
+                        onClick={() => navigate("/search")}>
                         <FontAwesomeIcon icon={faMartiniGlass} />
                         Find A Cocktail
                         </button>
-                    <button className="secondary-cta">
+                    <button
+                        className="secondary-cta"
+                        onClick={() => navigate("/ingredients")}>
                         <FontAwesomeIcon icon={faLeaf} />
                         My Ingredients
                         </button>

@@ -8,7 +8,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav>
-      <div className = "wordmark">After Hours</div>
+      <Link to="/" className="wordmark">After Hours</Link>
 
       <button className = "menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         <FontAwesomeIcon icon={faBars} />

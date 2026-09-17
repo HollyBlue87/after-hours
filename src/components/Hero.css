@@ -1,12 +1,7 @@
-/* *************************
-   HERO SECTION
-   ************************* */
-
 /* Main Hero section and background image */
 .hero {
     width: 100%;
     height: 600px;
-
     background-image:
         linear-gradient(
             to right,
@@ -30,11 +25,6 @@
     padding-top: 120px;
 }
 
-
-/* *************************
-   HERO CONTENT
-   ************************* */
-
 /* Main wrapper containing the Hero text and buttons */
 .hero-content {
     max-width: 260px;
@@ -45,24 +35,12 @@
 
 /* Hero text block */
 .hero-copy {
-    /* Moves the text block down from its normal position */
     transform: translateY(25%);
-
-    /* Keeps the text block compact */
     max-width: 260px;
-
-    /* Adds a semi transparent dark background behind the text */
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: multiply;
-
-    /* Small gap from the left edge */
     margin-left: 0.5rem;
 }
-
-
-/* *************************
-   HERO TEXT
-   ************************* */
 
 /* Main "After Hours" heading */
 .hero-title {
@@ -116,11 +94,6 @@
     font-weight: 500;
 }
 
-
-/* *************************
-   HERO ACTIONS
-   ************************* */
-
 /* Container holding the three Hero buttons */
 .hero-actions {
     display: flex;
@@ -133,9 +106,6 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
-
-
 
 /* Shared layout, typography and background for Hero buttons */
 .hero-actions button {
@@ -160,11 +130,6 @@
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: multiply;
 }
-
-
-/* *************************
-   PRIMARY CTA
-   ************************* */
 
 /* Find A Cocktail button */
 .primary-cta {
@@ -195,11 +160,6 @@
     color: var(--primary-bg);
 }
 
-
-/* *************************
-   SECONDARY CTA
-   ************************* */
-
 /* My Ingredients button */
 .secondary-cta {
     background: transparent;
@@ -228,11 +188,6 @@
 .secondary-cta:hover svg {
     color: var(--text-primary);
 }
-
-
-/* *************************
-   AI CTA
-   ************************* */
 
 /* Ask The Bartender button */
 .ai-cta {
@@ -263,11 +218,6 @@
 .ai-cta:hover svg {
     color: var(--primary-bg);
 }
-
-
-/* *************************
-   TABLET (768px – 991px)
-   ************************* */
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
@@ -332,11 +282,6 @@
         width: 300px;
     }
 }
-
-
-/* ************************
-   DESKTOP (992px+)
-   ************************ */
 
 @media screen and (min-width: 992px) {
 

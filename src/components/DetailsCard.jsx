@@ -54,21 +54,21 @@ function DetailsCard({ type, name, image, alcoholType, glassType, ingredients, i
 
                 <div className="card-back">
 
-        {type === "cocktail" && (
-            <>
-                <h2>{name}</h2>
+                    {type === "cocktail" && (
+                        <>
+                            <h2>{name}</h2>
 
-                <p>
-                    <strong>TYPE</strong>
-                    <span>{alcoholType}</span>
-                </p>
+                            <p>
+                                <strong>TYPE</strong>
+                                <span>{alcoholType}</span>
+                            </p>
 
-                <p>
-                    <strong>GLASS</strong>
-                    <span>{glassType}</span>
-                </p>
-            </>
-        )}
+                            <p>
+                                <strong>GLASS</strong>
+                                <span>{glassType}</span>
+                            </p>
+                        </>
+                    )}
 
         {type === "ingredients" && (
             <>

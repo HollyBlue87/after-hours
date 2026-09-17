@@ -5,6 +5,7 @@ import SearchCocktails from "./components/SearchCocktails"
 import CocktailDetails from "./components/CocktailDetails"
 import Favourites from "./components/Favourites"
 import Bartender from "./components/Bartender";
+import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom"
 import { useState } from "react";
 
@@ -12,7 +13,6 @@ function App() {
   const [isBartenderOpen, setIsBartenderOpen] = useState(false);
   const [bartenderMode, setBartenderMode] = useState("recommend");
   const [bartenderCocktail, setBartenderCocktail] = useState(null);
-  console.log("Bartender open:", isBartenderOpen);
   return (
     <>
       <Navbar />
@@ -38,6 +38,7 @@ function App() {
               bartenderCocktail={bartenderCocktail}
           />
       )}
+      <Footer />
     </>
   )
 }

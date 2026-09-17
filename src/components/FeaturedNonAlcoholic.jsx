@@ -35,7 +35,7 @@ function FeaturedNonAlcoholic() {
 
 
     return (
-        <section className="featured-cocktails">
+        <section className="featured-cocktails featured-non-alcoholic">
             <div className="section-heading">
                 <span></span>
                 <h2 className="featured-title">Featured Non-Alcoholic Cocktails</h2>
@@ -53,6 +53,7 @@ function FeaturedNonAlcoholic() {
                             return (
                                 <CocktailCard
                                     key={cocktail.idDrink}
+                                    id={cocktail.idDrink}
                                     name={cocktail.strDrink}
                                     image={cocktail.strDrinkThumb}
                                 />
