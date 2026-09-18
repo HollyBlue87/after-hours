@@ -56,7 +56,7 @@
     text-align: center;
     position: relative;
     padding: 45px 20px 20px;
-}
+}   
 
 .card-icon {
     width: 100px;
@@ -125,6 +125,15 @@
 
 .card-back h2 + p {
     margin-top: 20px;
+}
+
+.ai-cta {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--teal);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(201, 164, 92, 0.3);
+    padding: 0.75rem 1.25rem;
 }
 
 

@@ -102,8 +102,8 @@ return (
                 <h3>{props.name}</h3>
 
                  <ul>
-                    {ingredients.map((item) => (
-                        <li key={item.ingredient}>
+                    {ingredients.map((item, index) => (
+                        <li key={`${item.ingredient}-${index}`}>
                             {item.measurement} {item.ingredient}
                         </li>
                     ))}

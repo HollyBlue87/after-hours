@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./CocktailDetails.css";
 import "./Hero.css";
 import DetailsCard from "./DetailsCard";
 
 function CocktailDetails({ setIsBartenderOpen, setBartenderMode, setBartenderCocktail }) {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [cocktail, setCocktail] = useState(null);
     const [ingredients, setIngredients] = useState([]);
 
@@ -38,8 +39,16 @@ function CocktailDetails({ setIsBartenderOpen, setBartenderMode, setBartenderCoc
     }, [id]);
 
     return (
-            cocktail && (
-            <div className="card-container">
+        cocktail && (
+            <>
+                <button
+                    className="back-button"
+                    onClick={() => navigate(-1)}
+                >
+                    ← Back
+                </button>
+
+                <div className="card-container">
                 <DetailsCard
                     type="cocktail"
                     name={cocktail.strDrink}
@@ -63,9 +72,9 @@ function CocktailDetails({ setIsBartenderOpen, setBartenderMode, setBartenderCoc
                     instructions={cocktail.strInstructions}
                 />
             </div>
-            )
-        )
-}
+        </>
+    )
+)};
 
 export default CocktailDetails;
 
