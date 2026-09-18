@@ -50,6 +50,12 @@ function MyIngredients() {
 
     async function findCocktails() {
         setError("")
+
+        if (ingredient.length === 0) {
+            setError("Please add at least one ingredient!");
+            return;
+        }
+        
         const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
         const requests = alphabet.map((letter) =>

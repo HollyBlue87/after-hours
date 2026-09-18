@@ -162,6 +162,7 @@
 
 .cocktail-results {
     display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
@@ -199,10 +200,6 @@
         width: 250px;
         height: 44px;
     }
-
-    .cocktail-results {
-        grid-template-columns: repeat(2, 300px);
-    }
 }
 
 @media screen and (min-width: 992px) {
@@ -228,10 +225,6 @@
 
     .ingredients-hero .ingredient-search button {
         height: 46px;
-    }
-
-    .cocktail-results {
-        grid-template-columns: repeat(3, 300px);
     }
 }
 
