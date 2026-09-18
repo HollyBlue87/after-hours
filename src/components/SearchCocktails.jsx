@@ -42,7 +42,7 @@ function SearchCocktails() {
     <>
         <section className="search-hero">
 
-          <div className="hero-content">
+          <div className="search-hero-content">
               <h1>Search Cocktails</h1>
               <p>What are you sipping tonight?</p>
                 <div className="form-container">
@@ -102,3 +102,5 @@ function SearchCocktails() {
 }
 
 export default SearchCocktails
+
+

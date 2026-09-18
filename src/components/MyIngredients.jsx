@@ -12,11 +12,6 @@ function MyIngredients() {
         setError("");
         e.preventDefault();
 
-        if (ingredient.length === 0) {
-            setError("Please add at least one ingredient!");
-            return;
-        }
-
         if (searchTerm === "") {
             setError("Please enter an ingredient!");
             return;
@@ -98,10 +93,10 @@ function MyIngredients() {
     return (
     <>
         <section className="ingredients-hero">
-            <div className="hero-content">
+            <div className="ingredients-hero-content">
                 <h1>My Ingredients</h1>
 
-                <p className="hero-subtitle">
+                <p>
                     What's calling your glass tonight?
                 </p>
 

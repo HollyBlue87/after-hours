@@ -19,9 +19,9 @@
     justify-content: flex-start;
 }
 
-.ingredients-hero .hero-subtitle {
+.ingredients-hero-content p {
     font-family: var(--heading-font);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--gold);
     margin: 0 0 1rem;
@@ -29,7 +29,7 @@
     white-space: nowrap;
 }
 
-.ingredients-hero .hero-content {
+.ingredients-hero-content {
     width: 280px;
     padding-left: 1rem;
     padding-top: 0;
@@ -37,6 +37,8 @@
     background-color: rgba(0, 0, 0, 0.2);
     background-blend-mode: multiply;
     position: static;
+    transform: translate(1rem, 30px);
+    text-align: center;
 }
 
 .ingredients-hero h1 {
@@ -159,9 +161,8 @@
 }
 
 .cocktail-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -179,26 +180,45 @@
             url("../assets/my-ingredients-hero.png");
     }
 
-    .ingredients-hero .hero-content {
+    .ingredients-hero-content {
         width: 400px;
         padding-left: 3rem;
         padding-top: 5rem;
+        text-align: left;
+    }
+
+    .ingredients-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .ingredients-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .ingredients-hero-content input {
+        width: 250px;
+        height: 44px;
+    }
+
+    .cocktail-results {
+        grid-template-columns: repeat(2, 300px);
     }
 }
 
 @media screen and (min-width: 992px) {
-    .ingredients-hero .hero-content {
+    .ingredients-hero-content {
         width: 500px;
         padding-left: 5rem;
         padding-top: 5rem;
+        transform: translateX(60px);
     }
 
-    .ingredients-hero h1 {
-        font-size: 3.5rem;
+    .ingredients-hero-content h1 {
+        font-size: 3.2rem;
     }
 
-    .ingredients-hero .hero-subtitle {
-        font-size: 1.2rem;
+    .ingredients-hero-content p {
+        font-size: 1.4rem;
     }
 
     .ingredients-hero .ingredient-search input {
@@ -209,5 +229,18 @@
     .ingredients-hero .ingredient-search button {
         height: 46px;
     }
+
+    .cocktail-results {
+        grid-template-columns: repeat(3, 300px);
+    }
 }
 
+
+ @media screen and (min-width: 1200px) {
+    .ingredients-hero-content {
+        width: 600px;
+        padding-left: 6rem;
+        padding-top: 5rem;
+        transform: translate(120px, 40px);
+    }
+ }
