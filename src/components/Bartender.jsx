@@ -14,6 +14,7 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
     ]);
     const [userMessage, setUserMessage] = useState("");
     const [isThinking, setIsThinking] = useState(false);
+    const [thinkingMessage, setThinkingMessage] = useState("Bartender is thinking...");
     const chatMessagesRef = useRef(null);
 
     useEffect(() => {
@@ -22,6 +23,27 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
                 chatMessagesRef.current.scrollHeight;
         }
     }, [messages]);
+
+    useEffect(() => {
+        if (!isThinking) {
+            return;
+        }
+
+        const firstTimer = setTimeout(() => {
+            setThinkingMessage("Still working on that...");
+        }, 7000);
+
+        const secondTimer = setTimeout(() => {
+            setThinkingMessage(
+                "Thanks for your patience — the bartender is taking a little longer than usual."
+            );
+        }, 20000);
+
+        return () => {
+            clearTimeout(firstTimer);
+            clearTimeout(secondTimer);
+        };
+        }, [isThinking]);
 
     const spiritOptions = [
     "Vodka",
@@ -85,6 +107,7 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
             return;
         }
 
+        setThinkingMessage("Bartender is thinking...");
         setIsThinking(true);
 
         const newUserMessage = {
@@ -188,7 +211,7 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
                     
                     {isThinking && (
                         <p className="bartender thinking">
-                            Bartender is thinking...
+                            {thinkingMessage}
                         </p>
                     )}
                 </div>

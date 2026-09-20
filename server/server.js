@@ -9,6 +9,31 @@ const ai = new GoogleGenAI({});
 const PORT = process.env.PORT || 3001;
 const SERVER_URL = `http://localhost:${PORT}`;
 
+async function generateWithRetry(prompt) {
+    const maxRetries = 2;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+        try {
+            return await ai.models.generateContent({
+                model: "gemini-3.6-flash",
+                contents: prompt,
+            });
+        } catch (error) {
+            if (error.status !== 503 || attempt === maxRetries) {
+                throw error;
+            }
+
+            const delay = 2000 * (2 ** attempt);
+
+            console.log(
+                `Gemini is busy. Retrying in ${delay / 1000} seconds...`
+            );
+
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+    }
+}
+
 app.use(cors());
 app.use(express.json());
 
@@ -45,10 +70,7 @@ app.post("/api/bartender", async (req, res) => {
             If there is no sensible substitute, say so.
         `;
 
-        const response = await ai.models.generateContent({
-            model: "gemini-3.6-flash",
-            contents: prompt,
-        });
+        const response = await generateWithRetry(prompt);
 
         res.json({
             recommendation: response.candidates[0].content.parts[0].text
@@ -115,10 +137,8 @@ app.post("/api/bartender", async (req, res) => {
             Do not invent cocktails that are not in the list.
         `;
 
-        const response = await ai.models.generateContent({
-            model: "gemini-3.6-flash",
-            contents: prompt,
-        });
+        const response = await generateWithRetry(prompt);
+
 
         res.json({
             recommendation: response.candidates[0].content.parts[0].text
@@ -199,10 +219,7 @@ app.post("/api/bartender", async (req, res) => {
         Do not recommend anything that is not on the list.
         `;
 
-    const response = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
-        contents: prompt,
-    });
+    const response = await generateWithRetry(prompt);
 
     res.json({
         recommendation: response.candidates[0].content.parts[0].text
