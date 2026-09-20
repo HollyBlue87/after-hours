@@ -6,6 +6,9 @@ import { GoogleGenAI } from "@google/genai";
 const app = express();
 const ai = new GoogleGenAI({});
 
+const PORT = process.env.PORT || 3001;
+const SERVER_URL = `http://localhost:${PORT}`;
+
 app.use(cors());
 app.use(express.json());
 
@@ -56,7 +59,7 @@ app.post("/api/bartender", async (req, res) => {
 
     if (mode === "chat") {
         const cocktailResponse = await fetch(
-            "http://localhost:3001/api/cocktails"
+            `${SERVER_URL}/api/cocktails`
         );
 
         const allCocktails = await cocktailResponse.json();
@@ -125,7 +128,7 @@ app.post("/api/bartender", async (req, res) => {
     }
 
     const cocktailResponse = await fetch(
-        "http://localhost:3001/api/cocktails"
+        `${SERVER_URL}/api/cocktails`
     );
 
     const allCocktails = await cocktailResponse.json();
@@ -227,8 +230,6 @@ app.get("/api/cocktails", async (req, res) => {
 
     res.json(allCocktails);
 });
-
-const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
     console.log(`Bartender server running on port ${PORT}`);

@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
 
+    const API_URL = import.meta.env.VITE_API_URL || "";
+
     const [missingIngredient, setMissingIngredient] = useState("");
     const [messages, setMessages] = useState([
         {
@@ -99,7 +101,7 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
         setUserMessage("");
 
         try {
-            const response = await fetch("/api/bartender", {
+            const response = await fetch(`${API_URL}/api/bartender`,  {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -147,7 +149,7 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
     async function handleAlternative() {
         setIsThinking(true);
 
-        const response = await fetch("/api/bartender", {
+        const response = await fetch(`${API_URL}/api/bartender`,  {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
