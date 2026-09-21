@@ -392,3 +392,34 @@ The deployment workflow is:
 
 Environment variables and API keys are kept out of the public repository.
 
+## Credits
+
+### APIs and Services
+
+- [TheCocktailDB](https://www.thecocktaildb.com/) — provided the cocktail data used throughout the application.
+- [Google Gemini](https://ai.google.dev/) — used to power the conversational AI bartender.
+- [GitHub Pages](https://pages.github.com/) — used to host the frontend application.
+- [Render](https://render.com/) — used to host the backend server.
+
+### Development Resources
+
+- [React](https://react.dev/) — frontend framework.
+- [React Router](https://reactrouter.com/) — client-side routing.
+- [Font Awesome](https://fontawesome.com/) — icons used throughout the application.
+- [Google Fonts](https://fonts.google.com/) — typography.
+- [Favicon.io](https://favicon.io/) — used to create the website favicon.
+
+### Design and Imagery
+
+AI image generation was used to create the atmospheric hero imagery and supporting visual assets used throughout the website.
+
+Canva was used to create and edit visual assets.
+
+### Development Support
+
+The project was developed with support from a developer friend who provided advice and guidance during development, particularly when working through technical problems and implementation decisions regarding AI bartender.
+
+ChatGPT was also used as a development mentor throughout the project. It was used to help explain JavaScript and React concepts, troubleshoot errors, discuss implementation approaches, and support debugging and responsive design decisions.
+
+The project code, design decisions and final implementation were developed and reviewed by the student.
+
