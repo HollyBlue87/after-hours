@@ -35,6 +35,7 @@
 
 .search-cocktails-container {
     padding-top: 50px;
+    min-height: 70px;
 }
 
 .search-hero-content h1 {
