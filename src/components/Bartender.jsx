@@ -31,7 +31,7 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail, setIsBartender
 
         const firstTimer = setTimeout(() => {
             setThinkingMessage("Still working on that...");
-        }, 7000);
+        }, 10000);
 
         const secondTimer = setTimeout(() => {
             setThinkingMessage(
