@@ -1,3 +1,7 @@
+/* --------------------------------
+   Search Hero
+--------------------------------- */
+
 .search-hero {
     background-image:
         linear-gradient(
@@ -8,24 +12,26 @@
             transparent 100%
         ),
         url(../assets/search-hero-mobile.png);
-
     background-position: left center;
     background-repeat: no-repeat;
     height: 600px;
     background-size: cover;
-
     display: flex;
     flex-direction: column;
 }
 
+/* Hero text and search content */
+
 .search-hero-content {
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  background-color: rgba(0, 0, 0, 0.3);
-  transform: translate(1rem, 30px);
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: translate(1rem, 30px);
 }
+
+/* Space between hero and search results */
 
 .search-cocktails-container {
     padding-top: 50px;
@@ -50,6 +56,10 @@
     padding-left: 10px;
 }
 
+/* --------------------------------
+   Search form
+--------------------------------- */
+
 .form-container {
     width: 260px;
     margin-top: 1rem;
@@ -66,32 +76,31 @@
     min-width: 0;
     height: 42px;
     padding: 0.5rem 1rem;
-
     font-family: var(--primary-font);
     font-size: 0.9rem;
     color: var(--text-primary);
-
     background-color: rgba(17, 16, 15, 0.6);
     border: 1px solid var(--gold);
     outline: none;
-
     border-radius: 8px 0 0 8px;
 }
 
 .form-container button {
     height: 42px;
     padding: 0 1rem;
-
     font-family: var(--primary-font);
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-primary);
     background-color: rgba(19, 129, 123, 0.9);
     border: 1px solid var(--gold);
-
     border-radius: 0 8px 8px 0;
     cursor: pointer;
 }
+
+/* --------------------------------
+   Search results heading
+--------------------------------- */
 
 .search-heading {
     display: flex;
@@ -116,13 +125,19 @@
     filter: drop-shadow(0 0 4px var(--gold));
 }
 
-
+/* --------------------------------
+   Search results grid
+--------------------------------- */
 
 .search-results-grid {
     display: grid;
     justify-content: center;
     gap: 2rem;
 }
+
+/* --------------------------------
+   Tablet
+--------------------------------- */
 
 @media screen and (min-width: 768px) {
 
@@ -169,6 +184,10 @@
     }
 }
 
+/* --------------------------------
+   Desktop
+--------------------------------- */
+
 @media screen and (min-width: 992px) {
 
     .search-hero-content {
@@ -179,6 +198,10 @@
         grid-template-columns: repeat(3, 300px);
     }
 }
+
+/* --------------------------------
+   Large desktop
+--------------------------------- */
 
 @media screen and (min-width: 1200px) {
 

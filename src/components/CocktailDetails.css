@@ -1,3 +1,7 @@
+/* --------------------------------
+   Cocktail details card layout
+--------------------------------- */
+
 .card-container {
     display: flex;
     align-items: center;
@@ -6,6 +10,8 @@
     gap: 1rem;
     margin-top: 2rem;
 }
+
+/* Return to previous page button */
 
 .back-button {
     display: block;
@@ -23,6 +29,8 @@
     transition: all 0.3s ease;
 }
 
+/* Tablet and desktop: display the detail cards in rows */
+
 @media (min-width: 768px) {
     .card-container {
         flex-direction: row;
@@ -31,8 +39,3 @@
         gap: 30px;
     }
 }
-
-
-
-
-    

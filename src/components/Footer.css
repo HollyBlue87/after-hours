@@ -1,3 +1,7 @@
+/* --------------------------------
+   Footer
+--------------------------------- */
+
 .footer {
     background-color: var(--nav-footer-colour);
     color: var(--text-primary);
@@ -5,6 +9,8 @@
     padding: 2.5rem 1rem 1.5rem;
     margin-top: 3rem;
 }
+
+/* Brand / wordmark */
 
 .footer-brand {
     margin-bottom: 1.5rem;
@@ -23,6 +29,8 @@
     margin: 0.5rem 0 0;
 }
 
+/* Footer navigation links */
+
 .footer-nav {
     display: flex;
     justify-content: center;
@@ -40,6 +48,8 @@
 .footer-nav a:hover {
     color: var(--gold-hover);
 }
+
+/* Copyright text */
 
 .footer-copyright {
     color: var(--text-secondary);

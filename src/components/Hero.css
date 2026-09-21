@@ -1,4 +1,6 @@
-/* Main Hero section and background image */
+/* --------------------------------
+   Main Hero section
+--------------------------------- */
 
 .hero {
     width: 100%;
@@ -18,15 +20,17 @@
     position: relative;
 }
 
-
-/* Adds extra space between the Hero and Featured Cocktails */
+/* Space between Hero and Featured Cocktails */
 
 .hero + .featured-cocktails {
     padding-top: 120px;
 }
 
+/* --------------------------------
+   Hero content
+--------------------------------- */
 
-/* Main wrapper containing the Hero text and buttons */
+/* Main wrapper containing hero text and buttons */
 
 .hero-content {
     max-width: 300px;
@@ -34,7 +38,6 @@
     margin-left: 1rem;
     text-align: left;
 }
-
 
 /* Hero text block */
 
@@ -46,7 +49,6 @@
     margin-left: 0.5rem;
 }
 
-
 /* Main "After Hours" heading */
 
 .hero-title {
@@ -57,8 +59,7 @@
     margin-right: 0.5rem;
 }
 
-
-/* Gold decorative line underneath the main heading */
+/* Decorative line underneath the main heading */
 
 .hero-title::after {
     content: "";
@@ -70,15 +71,13 @@
     margin-left: 0.5rem;
 }
 
-
-/* General h1 spacing within the Hero */
+/* General h1 spacing */
 
 .hero h1 {
     margin-top: 0;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
-
 
 /* "Where The Night Begins" subtitle */
 
@@ -91,8 +90,7 @@
     margin-right: 0.5rem;
 }
 
-
-/* Introductory Hero paragraph */
+/* Introductory paragraph */
 
 .hero-intro {
     font-family: var(--primary-font);
@@ -106,8 +104,11 @@
     font-weight: 500;
 }
 
+/* --------------------------------
+   Hero buttons
+--------------------------------- */
 
-/* Container holding the three Hero buttons */
+/* Container holding the three hero buttons */
 
 .hero-actions {
     display: flex;
@@ -120,8 +121,7 @@
     transform: translateX(-50%);
 }
 
-
-/* Shared layout, typography and background for Hero buttons */
+/* Shared hero button styling */
 
 .hero-actions button {
     display: flex;
@@ -141,7 +141,6 @@
     background-blend-mode: multiply;
 }
 
-
 /* Find A Cocktail button */
 
 .primary-cta {
@@ -151,15 +150,9 @@
     box-shadow: 0 0 10px rgba(201, 164, 92, 0.5);
 }
 
-
-/* Martini icon */
-
 .primary-cta svg {
     color: var(--gold);
 }
-
-
-/* Find A Cocktail hover state */
 
 .primary-cta:hover {
     background: var(--gold-hover);
@@ -168,13 +161,9 @@
     box-shadow: 0 0 10px rgba(201, 164, 92, 1);
 }
 
-
-/* Martini icon hover state */
-
 .primary-cta:hover svg {
     color: var(--primary-bg);
 }
-
 
 /* My Ingredients button */
 
@@ -185,16 +174,10 @@
     box-shadow: 0 0 10px rgba(79, 155, 150, 0.3);
 }
 
-
-/* Leaf icon */
-
 .secondary-cta svg {
     margin-right: 0.5rem;
     color: var(--teal);
 }
-
-
-/* My Ingredients hover state */
 
 .secondary-cta:hover {
     background-color: var(--teal);
@@ -202,13 +185,9 @@
     box-shadow: 0 0 10px rgba(164, 208, 205, 0.5);
 }
 
-
-/* Leaf icon hover state */
-
 .secondary-cta:hover svg {
     color: var(--text-primary);
 }
-
 
 /* Ask The Bartender button */
 
@@ -219,9 +198,6 @@
     box-shadow: 0 0 10px rgba(201, 164, 92, 0.3);
 }
 
-
-/* Ask The Bartender hover state */
-
 .ai-cta:hover {
     background: var(--gold-hover);
     color: var(--primary-bg);
@@ -229,27 +205,22 @@
     box-shadow: 0 0 10px rgba(164, 208, 205, 0.5);
 }
 
-
-/* Magic wand icon */
-
 .ai-cta svg {
     margin-right: 0.5rem;
     color: var(--gold);
 }
 
-
-/* Magic wand icon hover state */
-
 .ai-cta:hover svg {
     color: var(--primary-bg);
 }
 
-
-/* Tablet */
+/* --------------------------------
+   Tablet
+--------------------------------- */
 
 @media screen and (min-width: 768px) {
 
-    /* Tablet Hero sizing and background positioning */
+    /* Tablet Hero sizing and background */
 
     .hero {
         height: 800px;
@@ -258,8 +229,7 @@
         position: relative;
     }
 
-
-    /* Tablet Hero content positioning */
+    /* Tablet Hero content */
 
     .hero-content {
         max-width: 500px;
@@ -268,9 +238,8 @@
     }
 
     .hero + .featured-cocktails {
-        padding-top: 80px;
+        padding-top: 60px;
     }
-
 
     /* Tablet Hero text block */
 
@@ -279,8 +248,7 @@
         max-width: 360px;
     }
 
-
-    /* Tablet Hero heading */
+    /* Tablet heading */
 
     .hero-title {
         font-size: 3.5rem;
@@ -290,23 +258,20 @@
         margin-left: 4rem;
     }
 
-
-    /* Tablet Hero subtitle */
+    /* Tablet subtitle */
 
     .hero-subtitle {
         font-size: 1.5rem;
     }
 
-
-    /* Tablet Hero intro */
+    /* Tablet intro */
 
     .hero-intro {
         font-size: 1.1rem;
         max-width: 340px;
     }
 
-
-    /* Tablet Hero buttons */
+    /* Tablet buttons */
 
     .hero-actions {
         position: absolute;
@@ -318,25 +283,18 @@
         gap: 1rem;
     }
 
-
-    /* Tablet button width */
-
     .hero-actions button {
         width: 300px;
     }
-
-
-    .hero + .featured-cocktails {
-        padding-top: 60px;
-    }
 }
 
-
-/* Desktop */
+/* --------------------------------
+   Desktop
+--------------------------------- */
 
 @media screen and (min-width: 992px) {
 
-    /* Desktop Hero background and layout */
+    /* Desktop Hero background */
 
     .hero {
         width: 100%;
@@ -347,7 +305,6 @@
         background-repeat: no-repeat;
     }
 
-
     /* Desktop Hero content */
 
     .hero-content {
@@ -355,7 +312,6 @@
         padding-top: 6.5rem;
         text-align: left;
     }
-
 
     /* Desktop Hero text block */
 
@@ -372,36 +328,31 @@
         );
     }
 
-
-    /* Desktop Hero heading */
+    /* Desktop heading */
 
     .hero-title {
         font-size: 3.5rem;
     }
 
-
     .hero-title::after {
         margin-left: 0;
     }
 
-
-    /* Desktop Hero subtitle */
+    /* Desktop subtitle */
 
     .hero-subtitle {
         text-shadow: 0 2px 6px rgba(0, 0, 0, 10);
         font-size: 1.5rem;
     }
 
-
-    /* Desktop Hero intro */
+    /* Desktop intro */
 
     .hero-intro {
         font-size: 1.1rem;
         max-width: 340px;
     }
 
-
-    /* Desktop Hero buttons */
+    /* Desktop buttons */
 
     .hero-actions {
         position: absolute;
@@ -413,40 +364,45 @@
         gap: 1rem;
     }
 
-
     .hero-actions button {
         width: 300px;
     }
 }
 
+/* --------------------------------
+   Large desktop
+--------------------------------- */
+
 @media screen and (min-width: 1200px) {
 
-    /* Desktop Hero content */
-.hero-content {
-    width: 50%;
-    max-width: none;
-    padding-left: 5%;
-    text-align: left;
-}
+    .hero-content {
+        width: 50%;
+        max-width: none;
+        padding-left: 5%;
+        text-align: left;
+    }
 
-/* Desktop Hero text block */
-.hero-copy {
-    transform: none;
-    max-width: 500px;
-    background-color: transparent;
-    margin-left: 0;
-}
+    .hero-copy {
+        transform: none;
+        max-width: 500px;
+        background-color: transparent;
+        margin-left: 0;
+    }
 
-    /* Desktop Hero heading */
-    .hero-title { font-size: 4.5rem; }
+    .hero-title {
+        font-size: 4.5rem;
+    }
 
-    /* Desktop Hero subtitle */
-    .hero-subtitle { font-size: 1.5rem; }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
 
-    /* Desktop Hero intro */
-    .hero-intro { max-width: 500px; }
+    .hero-intro {
+        max-width: 500px;
+    }
 
-    /* Desktop Hero buttons */
+    /* Large desktop buttons sit in a horizontal row */
+
     .hero-actions {
         position: static;
         transform: none;
@@ -457,7 +413,7 @@
         margin-top: 2rem;
     }
 
-    /* Desktop button width adjusts to content */
-    .hero-actions button { width: auto; }
-    
+    .hero-actions button {
+        width: auto;
+    }
 }

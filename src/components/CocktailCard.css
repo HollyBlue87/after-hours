@@ -1,4 +1,6 @@
-/* Styles for featured sections on the homepage */
+/* --------------------------------
+   Featured cocktail sections
+--------------------------------- */
 
 .featured-cocktails {
     padding: 2rem 1rem;
@@ -21,6 +23,8 @@
     font-size: 1.15rem;
 }
 
+/* Heading with decorative gold lines */
+
 .section-heading {
     display: flex;
     align-items: center;
@@ -40,6 +44,10 @@
     );
     filter: drop-shadow(0 0 4px var(--gold));
 }
+
+/* --------------------------------
+   Featured cocktail carousel
+--------------------------------- */
 
 .featured-container {
     display: flex;
@@ -73,8 +81,10 @@
     color: var(--primary-bg);
 }
 
+/* --------------------------------
+   Reusable cocktail card
+--------------------------------- */
 
-/* Cocktail card styles * REUSABLE CARDS* */
 .cocktail-card {
     width: 300px;
     border: 1px solid var(--teal);
@@ -83,6 +93,7 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    perspective: 1000px;
 }
 
 .featured-container .cocktail-card:first-child {
@@ -109,6 +120,8 @@
     text-align: center;
 }
 
+/* Favourite heart button */
+
 .favourite-button {
     position: absolute;
     top: 10px;
@@ -128,6 +141,8 @@
     font-size: 1.25rem;
     filter: drop-shadow(0 0 4px var(--gold));
 }
+
+/* Cocktail name and details button */
 
 .cocktail-name {
     font-family: var(--heading-font);
@@ -155,9 +170,9 @@
     font-weight: 500;
 }
 
-.cocktail-card {
-    perspective: 1000px;
-}
+/* --------------------------------
+   Cocktail card flip
+--------------------------------- */
 
 .cocktail-card-inner {
     position: relative;
@@ -185,9 +200,6 @@
     top: 0;
     left: 0;
     transform: rotateY(180deg);
-}
-
-.cocktail-card-back {
     min-height: 100%;
     padding: 1.25rem;
     box-sizing: border-box;
@@ -221,6 +233,10 @@
     font-style: italic;
 }
 
+/* --------------------------------
+   Tablet and desktop
+--------------------------------- */
+
 @media (min-width: 768px) {
 
     .carousel-wrapper {
@@ -242,6 +258,3 @@
         font-size: 1.5rem;
     }
 }
-
-
-

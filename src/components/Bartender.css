@@ -1,3 +1,7 @@
+/* ------------------------------
+   Full bartender modal
+--------------------------------- */
+
 .bartender-modal {
     position: fixed;
     bottom: 1rem;
@@ -26,6 +30,10 @@
     color: var(--text-primary);
 }
 
+/* ------------------------------
+   General bartender buttons
+--------------------------------- */
+
 .bartender-modal button {
     font-family: var(--primary-font);
     padding: 0.5rem 0.8rem;
@@ -41,11 +49,17 @@
     border-color: var(--gold-hover);
 }
 
+/* Selected missing ingredient */
+
 .missing-ingredient-options .selected {
     background-color: var(--gold-hover);
     color: var(--primary-bg);
     border-color: var(--gold-hover);
 }
+
+/* ------------------------------
+   Quick-pick button groups
+--------------------------------- */
 
 .drink-type-options,
 .spirit-options {
@@ -56,22 +70,20 @@
     margin-bottom: 1.5rem;
 }
 
+/* ------------------------------
+   Minimise and close controls
+--------------------------------- */
 
 .bartender-modal .bartender-close {
     position: absolute;
     top: 0.7rem;
     right: 0.8rem;
-
     width: auto;
     min-width: 0;
-
     padding: 0.2rem 0.5rem;
-
     border: none;
     background: transparent;
-
     color: var(--text-secondary);
-
     font-size: 1.5rem;
     line-height: 1;
 }
@@ -96,6 +108,14 @@
     background: transparent;
 }
 
+.bartender-close:hover {
+    color: var(--gold-hover) !important;
+}
+
+/* ------------------------------
+   Minimized bartender bar
+--------------------------------- */
+
 .bartender-minimized {
     position: fixed;
     bottom: 1rem;
@@ -112,13 +132,13 @@
 }
 
 .bartender-minimized:hover {
-    background-color: var(--gold-hover)!important;
+    background-color: var(--gold-hover);
     color: var(--primary-bg);
 }
 
-.bartender-close:hover {
-    color: var(--gold-hover) !important;
-}
+/* ------------------------------
+   Chat message area
+--------------------------------- */
 
 .chat-messages {
     height: 230px;
@@ -129,6 +149,8 @@
     margin-bottom: 1rem;
     padding: 0.3rem;
 }
+
+/* Bartender messages */
 
 .chat-messages .bartender {
     align-self: flex-start;
@@ -142,6 +164,8 @@
     font-size: 0.9rem;
 }
 
+/* User messages */
+
 .chat-messages .user {
     align-self: flex-end;
     max-width: 85%;
@@ -153,10 +177,16 @@
     font-size: 0.9rem;
 }
 
+/* Thinking message shown while Gemini is responding */
+
 .chat-messages .thinking {
     font-style: italic;
     opacity: 0.7;
 }
+
+/* ------------------------------
+   Chat input
+--------------------------------- */
 
 .bartender-chat {
     display: flex;
@@ -188,6 +218,10 @@
     flex-shrink: 0;
 }
 
+/* ------------------------------
+   Quick-pick spacing
+--------------------------------- */
+
 .quick-picks {
     margin-top: 0.5rem;
 }
@@ -208,6 +242,10 @@
     padding: 0.3rem 0.55rem;
     font-size: 0.8rem;
 }
+
+/* ------------------------------
+   Mobile modal positioning
+--------------------------------- */
 
 @media screen and (max-width: 767px) {
     .bartender-modal {

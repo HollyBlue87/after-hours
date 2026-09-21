@@ -1,3 +1,7 @@
+/* --------------------------------
+   404 Not Found page
+--------------------------------- */
+
 .not-found {
     min-height: 55vh;
     display: flex;
@@ -9,12 +13,16 @@
     background-color: var(--primary-bg);
 }
 
+/* 404 heading */
+
 .not-found h1 {
     font-family: var(--heading-font);
     font-size: 6rem;
     color: var(--gold);
     margin: 0;
 }
+
+/* Bartender message */
 
 .not-found h2 {
     font-family: var(--heading-font);
@@ -23,10 +31,14 @@
     margin: 0 0 1rem;
 }
 
+/* Supporting message */
+
 .not-found p {
     color: var(--text-secondary);
     margin-bottom: 2rem;
 }
+
+/* Return to homepage link */
 
 .not-found a {
     display: inline-block;

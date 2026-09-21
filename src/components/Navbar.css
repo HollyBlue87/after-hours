@@ -1,36 +1,50 @@
+/* --------------------------------
+   Main navigation
+--------------------------------- */
+
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 3;
-  background-color: var(--primary-bg);
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: var(--primary-bg);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border);
 }
+
+/* Navigation list items */
 
 li {
     color: var(--text-primary);
 }
 
 li:hover {
-  color: var(--gold);
+    color: var(--gold);
 }
 
+/* After Hours wordmark */
+
 .wordmark {
-  font-family: var(--brand-font);
-  color: var(--gold);
-  font-size: 2rem;
+    font-family: var(--brand-font);
+    color: var(--gold);
+    font-size: 2rem;
 }
+
+/* --------------------------------
+   Navigation links
+--------------------------------- */
 
 .nav-links {
     display: none;
     list-style: none;
     gap: 2rem;
-        margin: 0;
+    margin: 0;
     padding: 0;
 }
+
+/* Mobile navigation menu when opened */
 
 .nav-links.open {
     display: flex;
@@ -45,22 +59,29 @@ li:hover {
     border-bottom: 1px solid var(--border);
 }
 
+/* Mobile menu button */
+
 .menu-toggle {
-  background: transparent;
-  color: var(--gold);
-  border: none;
-  font-size: 1.5rem;
+    background: transparent;
+    color: var(--gold);
+    border: none;
+    font-size: 1.5rem;
 }
 
-/* Desktop */
+/* --------------------------------
+   Desktop navigation
+--------------------------------- */
+
 @media screen and (min-width: 992px) {
+
     .nav-links {
         display: flex;
         flex-direction: row;
         position: static;
         width: auto;
     }
+
     .menu-toggle {
-      display: none;
+        display: none;
     }
 }

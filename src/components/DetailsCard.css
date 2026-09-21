@@ -1,3 +1,7 @@
+/* --------------------------------
+   Details card
+--------------------------------- */
+
 .detail-card {
     width: 300px;
     height: 470px;
@@ -6,6 +10,10 @@
     background-color: var(--nav-footer-colour);
     perspective: 1000px;
 }
+
+/* --------------------------------
+   Card flip
+--------------------------------- */
 
 .card-inner {
     width: 100%;
@@ -37,8 +45,14 @@
     padding: 30px 20px;
     text-align: center;
     color: var(--text-primary);
+
+    /* Allows long ingredient/instruction content to scroll */
     overflow-y: auto;
 }
+
+/* --------------------------------
+   Card image and front content
+--------------------------------- */
 
 .detail-card img {
     width: 100%;
@@ -63,7 +77,9 @@
     text-align: center;
     position: relative;
     padding: 45px 20px 20px;
-}   
+}
+
+/* Icon overlapping the card content */
 
 .card-icon {
     width: 100px;
@@ -71,7 +87,7 @@
     border: 2px solid var(--gold);
     border-radius: 50%;
     background-color: var(--primary-bg);
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,6 +102,10 @@
     color: var(--gold);
     font-size: 28px;
 }
+
+/* --------------------------------
+   Card back content
+--------------------------------- */
 
 .card-back h2 {
     color: var(--gold);
@@ -117,13 +137,13 @@
     color: var(--text-primary);
 }
 
-.card-back p {
-    margin: 15px 0;
-}
-
 .card-back h2 + p {
     margin-top: 20px;
 }
+
+/* --------------------------------
+   AI bartender button
+--------------------------------- */
 
 .ai-cta {
     background: transparent;
@@ -133,5 +153,3 @@
     box-shadow: 0 0 10px rgba(201, 164, 92, 0.3);
     padding: 0.75rem 1.25rem;
 }
-
-

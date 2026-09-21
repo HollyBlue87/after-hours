@@ -7,8 +7,18 @@ import Favourites from "./components/Favourites"
 import Bartender from "./components/Bartender";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
-import { Routes, Route } from "react-router-dom"
-import { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
 
 function App() {
   const [isBartenderOpen, setIsBartenderOpen] = useState(false);
@@ -18,6 +28,8 @@ function App() {
   return (
     <>
       <Navbar />
+
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home 

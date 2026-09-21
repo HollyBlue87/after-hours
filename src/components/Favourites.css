@@ -1,3 +1,7 @@
+/* --------------------------------
+   Favourites page heading
+--------------------------------- */
+
 .favourites-title {
     font-family: var(--heading-font);
     font-size: 1.8rem;
@@ -27,18 +31,15 @@
     filter: drop-shadow(0 0 4px var(--gold));
 }
 
+/* Message shown when no favourites have been saved */
+
 .empty-favourites {
     text-align: center;
 }
 
-.favourites-title {
-    font-family: var(--heading-font);
-    color: var(--gold);
-    text-align: center;
-    margin: 0;
-    padding: 0 1rem;
-    line-height: 1;
-}
+/* --------------------------------
+   Favourite cocktail cards
+--------------------------------- */
 
 .favourites-page {
     display: flex;
@@ -48,6 +49,8 @@
     padding: 2rem 1rem;
 }
 
+/* Tablet and desktop layouts */
+
 @media screen and (min-width: 768px) {
     .favourites-page {
         flex-direction: row;
@@ -55,13 +58,13 @@
         justify-content: center;
         gap: 2rem;
     }
-}
 
-@media screen and (min-width: 768px) {
     .favourites-title {
         font-size: 2.2rem;
     }
 }
+
+/* Large desktop heading */
 
 @media screen and (min-width: 992px) {
     .favourites-title {
