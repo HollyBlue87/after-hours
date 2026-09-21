@@ -42,7 +42,6 @@ app.get("/api/test", (req, res) => {
 });
 
 app.post("/api/bartender", async (req, res) => {
-    console.log(req.body);
 
     const { drinkTypes, spirit, mode, cocktail, missingIngredient, messages } = req.body;
 
@@ -191,9 +190,6 @@ app.post("/api/bartender", async (req, res) => {
             ingredients: ingredients
         };
     });
-
-    console.log("Eligible cocktails:", cocktailDetails.length);
-    console.log(cocktailDetails.slice(0, 10));
 
     const prompt = `
         You are the bartender for a cocktail recommendation app.

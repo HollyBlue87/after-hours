@@ -1,7 +1,7 @@
 import "./Bartender.css";
 import { useEffect, useRef, useState } from "react";
 
-function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
+function Bartender({ setIsBartenderOpen, mode, bartenderCocktail, setIsBartenderMinimized }) {
 
     const API_URL = import.meta.env.VITE_API_URL || "";
 
@@ -289,6 +289,14 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail }) {
                     </div>
                 </>
             )}
+
+            <button
+                className="bartender-minimize"
+                onClick={() => setIsBartenderMinimized(true)}
+                aria-label="Minimize bartender"
+            >
+                −
+            </button>
 
             <button
                 className="bartender-close"
