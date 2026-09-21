@@ -423,3 +423,33 @@ ChatGPT was also used as a development mentor throughout the project. It was use
 
 The project code, design decisions and final implementation were developed and reviewed by the student.
 
+## Future Development
+
+Although the main functionality of After Hours has been implemented, several improvements could be considered for future versions.
+
+### Preserving Search and Ingredient Results
+
+When navigating from Search Cocktails or My Ingredients to a cocktail's Details page, the previous results are not currently preserved when returning to the original page.
+
+A future version could preserve the user's search term, selected ingredients and results when navigating between pages.
+
+### Expanded Cocktail Data
+
+The application could be expanded to provide additional cocktail information, such as more detailed categories, glassware information, flavour profiles and cocktail history where suitable data is available.
+
+### Improved Favourites
+
+The current favourites feature stores the user's favourites within the application. A future version could allow users to create an account and synchronise their favourites across devices.
+
+### AI Bartender Improvements
+
+The AI bartender could be expanded with additional conversational features, more detailed preference handling and further ingredient substitution options.
+
+### Additional Accessibility Improvements
+
+Further accessibility testing could be carried out with assistive technologies such as screen readers and keyboard-only navigation.
+
+### Performance Optimisation
+
+Further optimisation could be carried out as the application grows, particularly around API requests, image loading and the amount of cocktail data processed by the application.
+
