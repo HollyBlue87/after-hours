@@ -358,3 +358,37 @@ The free version of TheCocktailDB API also has limitations that affected how the
 
 The Gemini API may also experience temporary rate limits or service availability issues, particularly when using a free-tier account.
 
+## Deployment
+
+The frontend of After Hours is deployed using GitHub Pages, while the backend server used by the AI bartender is hosted separately using Render.
+
+### Frontend Deployment
+
+The React application is hosted on GitHub Pages.
+
+The project uses Vite and is configured with the GitHub Pages base path so that React Router works correctly when the application is hosted under the repository path.
+
+A GitHub Actions workflow is used to build and deploy the frontend.
+
+The Gemini API URL is supplied through a GitHub Actions secret rather than being hard-coded into the application.
+
+### Backend Deployment
+
+The backend server is deployed to Render.
+
+The server handles communication with the Gemini API so that the Gemini API key is not exposed in the frontend application.
+
+The Gemini API key is stored as an environment variable in Render.
+
+### Deployment Process
+
+The deployment workflow is:
+
+1. Changes are committed and pushed to GitHub.
+2. GitHub Actions builds the React application.
+3. The production frontend is deployed to GitHub Pages.
+4. The frontend communicates with the deployed backend on Render.
+5. The backend communicates with the Gemini API.
+
+Environment variables and API keys are kept out of the public repository.
+
