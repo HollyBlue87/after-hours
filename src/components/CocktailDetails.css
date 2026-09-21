@@ -29,6 +29,30 @@
     transition: all 0.3s ease;
 }
 
+/* Favourite button for the cocktail details page */
+
+.details-favourite-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin: 2rem auto 2rem;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    background-color: rgba(17, 11, 6, 0.75);
+    color: var(--gold);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.details-favourite-button:hover {
+    background-color: var(--gold-hover);
+    color: var(--primary-bg);
+    box-shadow: 0 0 8px rgba(201, 164, 92, 0.5);
+}
+
 /* Tablet and desktop: display the detail cards in rows */
 
 @media (min-width: 768px) {

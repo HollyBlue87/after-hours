@@ -1,14 +1,40 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { FavouriteContext } from "../context/FavouriteContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faHeart} from "@fortawesome/free-solid-svg-icons"
+import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import "./CocktailDetails.css";
 import "./Hero.css";
 import DetailsCard from "./DetailsCard";
 
 function CocktailDetails({ setIsBartenderOpen, setBartenderMode, setBartenderCocktail }) {
+
     const { id } = useParams();
     const navigate = useNavigate();
     const [cocktail, setCocktail] = useState(null);
     const [ingredients, setIngredients] = useState([]);
+
+        const { favourites, addFavourite, removeFavourite } = useContext(FavouriteContext);
+    const isFavourite = favourites.some(
+        (favourite) => favourite.id === cocktail?.idDrink
+    );
+
+    const handleFavourite = () => {
+        const favouriteCocktail = {
+            id: cocktail.idDrink,
+            name: cocktail.strDrink,
+            image: cocktail.strDrinkThumb,
+            alcoholType: cocktail.strAlcoholic,
+            category: cocktail.strCategory
+        };
+
+        if (isFavourite) {
+            removeFavourite({ id: cocktail.idDrink });
+        } else {
+            addFavourite(favouriteCocktail);
+        }
+    };
 
     useEffect(() => {
 
@@ -46,6 +72,14 @@ function CocktailDetails({ setIsBartenderOpen, setBartenderMode, setBartenderCoc
                     onClick={() => navigate(-1)}
                 >
                     ← Back
+                </button>
+
+                <button
+                    className="details-favourite-button"
+                    onClick={handleFavourite}
+                    aria-label={isFavourite ? "Remove from favourites" : "Add to favourites"}
+                >
+                    <FontAwesomeIcon icon={isFavourite ? faHeart : faHeartRegular} />
                 </button>
 
                 <div className="card-container">
