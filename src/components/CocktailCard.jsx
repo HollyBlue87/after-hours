@@ -58,6 +58,7 @@ return (
                 <div className="image-area">
                     <button
                         className="favourite-button"
+                        aria-label={isFavourite ? "Remove from favourites" : "Add to favourites"}
                         onClick={(e) => {
                             e.stopPropagation();
 
@@ -73,7 +74,7 @@ return (
 
                     <img
                         className="cocktail-image"
-                        src={props.image}
+                        src={`${props.image}/medium`}
                         alt={props.name}
                     />
                 </div>

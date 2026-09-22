@@ -4,11 +4,11 @@ import FeaturedNonAlcoholic from "./FeaturedNonAlcoholic"
 
 function Home({ setIsBartenderOpen, setBartenderMode }) {
     return (
-        <>
+        <main>
         <Hero setIsBartenderOpen={setIsBartenderOpen} setBartenderMode={setBartenderMode}/>
         <FeaturedCocktails/>
         <FeaturedNonAlcoholic/>
-        </>
+        </main>
     )
 }
 
