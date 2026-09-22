@@ -12,7 +12,21 @@ function CocktailCard(props) {
     const [isFlipped, setIsFlipped] = useState(false);
     const [ingredients, setIngredients] = useState([]);
 
-    useEffect(() => {
+    
+
+    const favouriteContext = useContext(FavouriteContext);
+
+    const favouritesCocktail = {
+        id: props.id,
+        name: props.name,
+        image: props.image
+    };
+
+    const isFavourite = favouriteContext.favourites.some(
+        (favourite) => favourite.id === props.id
+    );
+
+    const fetchIngredients = () => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${props.id}`)
             .then(response => response.json())
             .then(data => {
@@ -33,23 +47,17 @@ function CocktailCard(props) {
 
                 setIngredients(ingredients);
             });
-    }, [props.id]);
-
-    const favouriteContext = useContext(FavouriteContext);
-
-    const favouritesCocktail = {
-        id: props.id,
-        name: props.name,
-        image: props.image
     };
-
-    const isFavourite = favouriteContext.favourites.some(
-        (favourite) => favourite.id === props.id
-    );
 return (
     <div
         className={`cocktail-card ${isFlipped ? "flipped" : ""}`}
-        onClick={() => setIsFlipped(!isFlipped)}
+        onClick={() => {
+            if (!isFlipped) {
+                fetchIngredients();
+            }
+
+            setIsFlipped(!isFlipped);
+        }}
     >
         <div className="cocktail-card-inner">
 
