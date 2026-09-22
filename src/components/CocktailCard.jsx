@@ -80,6 +80,9 @@ return (
                 </div>
 
                 <div className="card-content">
+                    <div className="card-icon">
+                        <FontAwesomeIcon icon={faMartiniGlass} />
+                    </div>
                     <div className="cocktail-title">
                         <h3 className="cocktail-name">{props.name}</h3>
                     </div>
