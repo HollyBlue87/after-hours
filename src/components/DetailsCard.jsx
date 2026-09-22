@@ -5,7 +5,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import cardCoverImage from "../assets/card-cover-image.png";
+import cardCoverImage from "../assets/card-cover-image.webp";
 
 function DetailsCard({ type, name, image, alcoholType, glassType, ingredients, instructions, setIsBartenderOpen, setBartenderMode, setBartenderCocktail, mode }) {
 

@@ -1,3 +1,11 @@
+/* --------------------------------*
+   My Ingredients Page Layout
+*--------------------------------- */
+
+.ingredients-page {
+    min-height: calc(100vh - 74px);
+}
+
 /* --------------------------------
    My Ingredients Hero
 --------------------------------- */
@@ -13,7 +21,7 @@
             rgba(0, 0, 0, 0.1) 75%,
             transparent 100%
         ),
-        url("../assets/my-ingredients-hero-mobile.png");
+        url("../assets/my-ingredients-hero-mobile.webp");
     background-size: cover;
     background-position: 65% center;
     background-repeat: no-repeat;
@@ -194,7 +202,7 @@
                 rgba(0, 0, 0, 0.1) 75%,
                 transparent 100%
             ),
-            url("../assets/my-ingredients-hero.png");
+            url("../assets/my-ingredients-hero.webp");
     }
 
     .ingredients-hero-content {

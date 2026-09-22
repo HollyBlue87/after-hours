@@ -13,7 +13,7 @@
             rgba(0, 0, 0, 0.1) 75%,
             transparent 100%
         ),
-        url(../assets/hero-image-mobile.png);
+        url(../assets/hero-image-mobile.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -299,7 +299,7 @@
     .hero {
         width: 100%;
         height: 800px;
-        background-image: url("../assets/after-hours-hero.png");
+        background-image: url("../assets/after-hours-hero.webp");
         background-size: cover;
         background-position: 75% 60%;
         background-repeat: no-repeat;

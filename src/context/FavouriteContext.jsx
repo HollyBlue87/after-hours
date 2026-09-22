@@ -23,7 +23,7 @@ function FavouriteProvider({ children }) {
                 return;
             }
 
-            setFavourites([...favourites, cocktail]);x
+            setFavourites([...favourites, cocktail]);
         };
 
         const removeFavourite = (cocktail) => {

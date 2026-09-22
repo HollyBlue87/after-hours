@@ -1,3 +1,11 @@
+/* --------------------------------*
+   Search Page Layout
+*--------------------------------- */
+
+.search-page {
+    min-height: calc(100vh - 74px);
+}
+
 /* --------------------------------
    Search Hero
 --------------------------------- */
@@ -11,7 +19,7 @@
             rgba(0, 0, 0, 0.1) 75%,
             transparent 100%
         ),
-        url(../assets/search-hero-mobile.png);
+        url(../assets/search-hero-mobile.webp);
     background-position: left center;
     background-repeat: no-repeat;
     height: 600px;
@@ -35,7 +43,7 @@
 
 .search-cocktails-container {
     padding-top: 50px;
-    min-height: 70px;
+    min-height: 200px;
 }
 
 .search-hero-content h1 {
@@ -147,7 +155,7 @@
     }
 
     .search-hero {
-        background-image: url(../assets/search-hero.png);
+        background-image: url(../assets/search-hero.webp);
         background-position: 60% center;
     }
 

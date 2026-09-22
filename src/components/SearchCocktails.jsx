@@ -39,7 +39,7 @@ function SearchCocktails() {
   };
 
   return (
-    <>
+    <div className="search-page">
         <section className="search-hero">
 
           <div className="search-hero-content">
@@ -97,7 +97,7 @@ function SearchCocktails() {
             </div>
 
         </main>
-    </>
+    </div>
 );
 }
 

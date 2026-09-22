@@ -97,7 +97,7 @@ function MyIngredients() {
     }
 
     return (
-    <>
+    <div className="ingredients-page">
         <section className="ingredients-hero">
             <div className="ingredients-hero-content">
                 <h1>My Ingredients</h1>
@@ -152,7 +152,7 @@ function MyIngredients() {
             }
 
         </main>
-    </>
+    </div>
     );
 }
 
