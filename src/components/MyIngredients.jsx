@@ -139,9 +139,11 @@ function MyIngredients() {
                 </div>
             )}
 
-            <button className="find-cocktails-btn" onClick={findCocktails}>
-                Find My Cocktails
-            </button>
+            {ingredient.length > 0 && (
+                <button className="find-cocktails-btn" onClick={findCocktails}>
+                    Find My Cocktails
+                </button>
+            )}
 
 
             {cocktails.length > 0 &&
