@@ -31,7 +31,7 @@ function SearchCocktails() {
       const data = await response.json();
 
       setCocktails(data.drinks ?? []);
-    } catch (error) {
+    } catch {
       setError("Something went wrong. Please try again");
     } finally {
       setLoading(false);
@@ -61,6 +61,13 @@ function SearchCocktails() {
         </section>
 
         <main className="search-cocktails-container">
+
+            {!hasSearched && (
+                <div className="search-empty-state">
+                    <h2>Ready to find your next drink?</h2>
+                    <p>Search above and discover your next favourite cocktail.</p>
+                </div>
+            )}
 
             {hasSearched && (
                 <div className="search-heading">

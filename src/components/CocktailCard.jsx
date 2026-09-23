@@ -1,5 +1,5 @@
 import "./CocktailCard.css";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { FavouriteContext } from "../context/FavouriteContext";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

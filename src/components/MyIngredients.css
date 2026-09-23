@@ -175,6 +175,30 @@
     transition: all 0.3s ease;
 }
 
+/* --------------------------------*
+   *Ingredients empty state*
+*--------------------------------- */
+
+.ingredients-empty-state {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.ingredients-empty-state h2 {
+    font-family: var(--heading-font);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin: 0 0 0.75rem;
+}
+
+.ingredients-empty-state p {
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
 /* --------------------------------
    Cocktail results
 --------------------------------- */

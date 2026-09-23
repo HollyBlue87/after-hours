@@ -43,7 +43,7 @@
 
 .search-cocktails-container {
     padding-top: 50px;
-    min-height: 200px;
+    min-height: 0px;
 }
 
 .search-hero-content h1 {
@@ -63,6 +63,30 @@
     color: var(--gold);
     margin: 0;
     padding-left: 10px;
+}
+
+/* --------------------------------*
+   *Search empty state*
+*--------------------------------- */
+
+.search-empty-state {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.search-empty-state h2 {
+    font-family: var(--heading-font);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin: 0 0 0.75rem;
+}
+
+.search-empty-state p {
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
 /* --------------------------------

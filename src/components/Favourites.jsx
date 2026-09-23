@@ -18,7 +18,7 @@ function Favourites() {
 });
 
     return (
-        <>
+        <div className="favourites-wrapper">
         <div className="favourites-heading">
             <span className="favourites-line"></span>
 
@@ -37,7 +37,7 @@ function Favourites() {
                 </div>
             )}
         </div>
-        </>
+        </div>
     );
 
 }

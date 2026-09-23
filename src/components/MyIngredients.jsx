@@ -132,9 +132,17 @@ function MyIngredients() {
                 ))}
             </div>
 
+            {cocktails.length === 0 && ingredient.length === 0 && (
+                <div className="ingredients-empty-state">
+                    <h2>What's in your glass?</h2>
+                    <p>Add your ingredients above and discover cocktails you can make.</p>
+                </div>
+            )}
+
             <button className="find-cocktails-btn" onClick={findCocktails}>
                 Find My Cocktails
             </button>
+
 
             {cocktails.length > 0 &&
                 <div className="cocktail-results">
