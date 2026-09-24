@@ -110,7 +110,7 @@
     height: 42px;
     padding: 0.5rem 1rem;
     font-family: var(--primary-font);
-    font-size: 0.9rem;
+    font-size: 16px;
     color: var(--text-primary);
     background-color: rgba(17, 16, 15, 0.6);
     border: 1px solid var(--gold);
