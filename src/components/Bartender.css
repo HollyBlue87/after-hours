@@ -243,6 +243,31 @@
     font-size: 0.8rem;
 }
 
+/* Surprise Me */
+
+.surprise-me-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.surprise-me-button {
+    padding: 0.65rem 1.5rem;
+    background-color: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.surprise-me-button:hover {
+    background-color: var(--gold);
+    color: var(--primary-bg);
+}
+
 /* ------------------------------
    Mobile modal positioning
 --------------------------------- */

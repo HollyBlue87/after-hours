@@ -237,6 +237,16 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail, setIsBartender
                     </button>
                 </div>
 
+                <div className="surprise-me-container">
+                    <button
+                        type="button"
+                        className="surprise-me-button"
+                        onClick={() => setUserMessage("Surprise me with a cocktail")}
+                    >
+                        Surprise Me
+                    </button>
+                </div>
+
             </div>
 
             {mode === "recommend" && (
