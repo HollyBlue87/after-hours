@@ -1,3 +1,5 @@
+![Am I Responsive? - After hours](src/assets/readme/after-hours-air.png)
+
 # After Hours
 
 After Hours is an interactive cocktail website designed for adults who want to explore cocktails, discover drinks based on ingredients they already have, save their favourite cocktails, and receive personalised cocktail recommendations.
@@ -33,22 +35,58 @@ The site was designed around the concept of a dark, luxurious tropical cocktail 
 
 ## UX / User Stories
 
-The project was planned around user needs, with user stories used to identify the functionality required by the target audience. The stories were prioritised using the MoSCoW method to help guide development.
+### Target Audience
 
-The complete user stories and their development status can be viewed on the [After Hours GitHub Project Board](YOUR-LINK-HERE).
+After Hours is aimed at adults who enjoy cocktails and want an engaging way to discover drinks, explore recipes and find cocktails based on ingredients they already have available.
 
-### Main User Needs
+The site is also intended for users who enjoy experimenting with cocktails and would like personalised recommendations or ingredient substitution suggestions.
 
-The site was designed to allow users to:
+### User Stories
 
-- Discover cocktails in an engaging visual environment.
-- Search for a specific cocktail.
-- Find cocktails using ingredients they already have available.
-- View cocktail ingredients and preparation instructions.
-- Save cocktails they want to revisit.
-- Ask for personalised cocktail recommendations.
-- Explore alternative ingredients when they do not have everything required.
-- Use the website comfortably across mobile, tablet and desktop screen sizes.
+The following user stories were defined during the planning and development of After Hours.
+
+#### Search for a Cocktail
+
+> As a user, I want to search for a cocktail by name so that I can quickly find a specific drink I'm interested in.
+
+#### Browse Featured Cocktails
+
+> As a user, I want to browse featured alcoholic and non-alcoholic cocktails so that I can discover drinks without having to search for a specific cocktail.
+
+#### View a Recipe
+
+> As a user, I want to view a cocktail's ingredients, measurements and preparation instructions so that I can make the drink.
+
+#### Save Favourites
+
+> As a user, I want to save cocktails as favourites so that I can easily find recipes I want to try again.
+
+#### Find Cocktails by Ingredients
+
+> As a user, I want to enter ingredients I have available so that I can find cocktails I can make with what I already have.
+
+#### Surprise Me
+
+> As a user, I want to receive random alcoholic and non-alcoholic cocktail suggestions so that I can discover something new when I don't know what to choose.
+
+### Additional Feature — AI Bartender
+
+The AI Bartender was introduced later in development as an additional feature rather than one of the original Project Board user stories.
+
+It provides a conversational way for users to ask for cocktail recommendations and advice, including suggestions based on preferences and ingredient substitutions when an ingredient is unavailable.
+
+#### Surprise Me
+
+The original Surprise Me user story proposed a dedicated feature
+displaying random alcoholic and non-alcoholic cocktails.
+
+During development, this evolved into a standalone Surprise Me
+button within the AI Bartender. Clicking the button populates
+the chat input with a surprise cocktail request, allowing users
+to discover a new cocktail without knowing what to search for.
+
+The feature was successfully tested, although the original
+two-category recommendation interface was not implemented.
 
 ### Wireframes
 
@@ -62,27 +100,48 @@ The complete set of wireframes is included below.
 
 #### Homepage
 
-[wireframes here]
+<img src="src/assets/readme/after-hours-desktop.png" alt="Homepage desktop wireframe" width="500">
+
+<img src="src/assets/readme/after-hours-tablet.png" alt="Homepage tablet wireframe" width="300">
+
+<img src="src/assets/readme/after-hours-mobile.png" alt="Homepage mobile wireframe" width="220">
+
 
 #### Search Cocktails
 
-[wireframes here]
+<img src="src/assets/readme/search-desktop.png" alt="Search desktop wireframe" width="500">
+
+<img src="src/assets/readme/after-hours-search-tablet.png" alt="Search tablet wireframe" width="300">
+
+<img src="src/assets/readme/after-hours-search-mobile.png" alt="Search mobile wireframe" width="220">
 
 #### My Ingredients
 
-[wireframes here]
+<img src="src/assets/readme/my-ingredients-desktop.png" alt="My ingredients desktop wireframe" width="500">
+
+<img src="src/assets/readme/my-ingredients.tablet.png" alt="My ingredients tablet wireframe" width="300">
+
+<img src="src/assets/readme/my-ingredients-mobile.png" alt="My ingredients mobile wireframe" width="220">
 
 #### Favourites
 
-[wireframes here]
+<img src="src/assets/readme/favourites-desktop.png" alt="Favourites desktop wireframe" width="500">
+
+<img src="src/assets/readme/favourites-tablet.png" alt="Favourites tablet wireframe" width="300">
+
+<img src="src/assets/readme/favourites-mobile.png" alt="Favourites mobile wireframe" width="220">
 
 #### Cocktail Details
 
-[wireframes here]
+<img src="src/assets/readme/cocktail-details-desktop.png" alt="Cocktail details desktop wireframe" width="500">
+
+<img src="src/assets/readme/cocktail-details-tablet.png" alt="Cocktail details tablet wireframe" width="300">
+
+<img src="src/assets/readme/cocktail-details-mobile.png" alt="Cocktail details mobile wireframe" width="220">
 
 #### Ask The Bartender
 
-[wireframes here]
+<img src="src/assets/readme/bartender.png" alt="Bartender desktop wireframe" width="300">
 
 ## Features
 
@@ -135,6 +194,8 @@ The complete set of wireframes is included below.
 - Provides alternative ingredient suggestions where appropriate.
 - Maintains conversation context during the session.
 - Includes quick-pick suggestions to help users start a conversation.
+- Includes a standalone Surprise Me button for spontaneous cocktail recommendations.
+- Quick Picks can be expanded or collapsed to provide more space for the conversation.
 - Provides visual feedback while the bartender is generating a response.
 - Keeps the Gemini API key on the server rather than exposing it in the frontend.
 
@@ -159,7 +220,7 @@ The colour palette was created to support the dark, luxurious tropical cocktail-
 
 The main colours include dark neutral backgrounds, gold accents, teal highlights and light text for contrast.
 
-![After Hours colour palette](path-to-colour-palette-image)
+<img src="src/assets/readme/after_hours_colour_palette.png" alt="After Hours colour palette" width="500">
 
 - **Dark neutral tones** are used for the main backgrounds and create the atmospheric bar aesthetic.
 - **Gold** is used for headings, borders and interactive elements, inspired by warm metallic details often associated with luxury bar interiors.
@@ -253,7 +314,9 @@ This allowed the feature to provide ingredient-based cocktail matching while rem
 
 ### AI Bartender Development
 
-The AI bartender was added as an extension of the cocktail discovery functionality.
+The AI bartender was initially considered a future development feature rather than part of the core project scope. As development progressed, it became clear that a conversational bartender could complement the cocktail discovery features and provide an additional way for users to interact with the application.
+
+The feature was therefore brought into the project at a later stage and developed as an extension of the existing cocktail discovery functionality.
 
 Google Gemini was selected to provide the conversational element of the bartender. The Gemini API is accessed through a separate server so that the API key is not exposed in the frontend.
 
@@ -287,76 +350,9 @@ Development involved testing, debugging and refining features throughout rather 
 
 ## Testing
 
-Testing was carried out throughout development to identify functional, responsive and accessibility issues before submission.
+Testing was carried out throughout development to identify functional, responsive, accessibility and validation issues before submission.
 
-### Responsive Testing
-
-Each page was tested at the required responsive breakpoints using Chrome DevTools.
-
-Testing included:
-
-- Mobile layouts.
-- Tablet layouts.
-- Desktop layouts.
-- Real browser resizing outside of the fixed DevTools responsive viewport.
-- Checking for horizontal overflow.
-- Checking image cropping and positioning.
-- Checking text, buttons and forms at different screen sizes.
-- Checking navigation behaviour at different breakpoints.
-
-Responsive issues were fixed during development rather than being left until the final testing stage.
-
-### Functional Testing
-
-Interactive features were tested to ensure that user actions produced the expected results.
-
-Testing included:
-
-- Cocktail name searches.
-- Ingredient entry and removal.
-- Ingredient-based cocktail matching.
-- Cocktail details navigation.
-- Favourite adding and removal.
-- Favourites persistence between pages.
-- AI bartender conversations.
-- AI bartender quick-pick options.
-- Alternative ingredient suggestions.
-- Navigation links and mobile navigation.
-- Error and empty-result messages.
-- Loading states.
-
-### Browser Console Testing
-
-The browser developer console was checked during development to identify JavaScript errors, React warnings and failed API requests.
-
-Issues discovered during development were investigated and fixed where appropriate.
-
-### Lighthouse Testing
-
-Lighthouse was used to evaluate:
-
-- Performance
-- Accessibility
-- Best Practices
-- SEO
-
-Testing was repeated after making performance and accessibility improvements.
-
-Final Lighthouse results will be recorded after production testing has been completed.
-
-### Validation
-
-The project was tested for HTML, CSS and JavaScript issues where appropriate.
-
-Any errors or warnings discovered during testing were investigated and corrected where possible.
-
-### Known Limitations
-
-The project uses external APIs, meaning some functionality is dependent on third-party services being available and accepting requests.
-
-The free version of TheCocktailDB API also has limitations that affected how the My Ingredients feature was implemented.
-
-The Gemini API may also experience temporary rate limits or service availability issues, particularly when using a free-tier account.
+[View Testing & Validation Evidence →](TESTING.md)
 
 ## Deployment
 
@@ -453,3 +449,91 @@ Further accessibility testing could be carried out with assistive technologies s
 
 Further optimisation could be carried out as the application grows, particularly around API requests, image loading and the amount of cocktail data processed by the application.
 
+## Reflection
+
+### What I Learned
+
+Developing After Hours has significantly improved my understanding of JavaScript and introduced me to developing a larger application using React. At the beginning of the project, I was still relatively new to JavaScript, so learning React at the same time was challenging. There were many concepts that I initially found confusing, particularly when several new concepts had to be used together.
+
+One area I now feel particularly comfortable with is creating React components. I have a much better understanding of why components are used and how breaking an application into smaller, reusable sections makes the code easier to manage. I also became more comfortable connecting components to the main application and passing information between them.
+
+I would not currently feel confident recreating the entire After Hours application independently without support. A significant amount of development involved learning unfamiliar concepts, debugging problems and receiving guidance from both ChatGPT and a developer friend. However, I feel that the project has given me a much stronger foundation in React and JavaScript and has shown me which areas I need to continue practising.
+
+As the project progressed, I also began creating a personal React Dummies Guide based on the concepts I had learned during development. The purpose of this guide was to create a practical reference that I could use when starting another React project, rather than having to rely on remembering everything from After Hours.
+
+Creating the guide helped me recognise which concepts I understood and which areas still needed more practice. It also encouraged me to think about the reasoning behind the code rather than only remembering the final solution.
+
+I also became more aware of the importance of using documentation when working with unfamiliar technologies. During development I used documentation and reference material for technologies and services including React, React Router, TheCocktailDB and Google Gemini. This helped me understand how different features were intended to work and gave me a reference point when troubleshooting problems. I found that combining documentation with practical experimentation and mentoring was more useful than relying on one source of information alone.
+
+### Challenges and Problem Solving
+
+One of the biggest challenges throughout the project was working with APIs. Using TheCocktailDB introduced me to retrieving external data and working with the limitations of a third-party service. The My Ingredients feature was particularly challenging because the available API functionality did not provide exactly what was required, meaning I had to find another way of achieving the functionality within the limitations of the API.
+
+The AI bartender was the most challenging part of the project. It required me to work with Google Gemini while also connecting it to the cocktail data used by the application. I had to understand the difference between the frontend and backend, keep the API key secure, manage the conversation context and handle responses from the AI service.
+
+I would not have been able to implement the AI bartender independently at this stage of my learning. I received significant support from a developer friend as well as mentoring from ChatGPT while working through the implementation. The feature involved several concepts that were new to me, and having these sources of support helped me understand what was happening rather than simply abandoning the feature when I became stuck.
+
+I also encountered temporary API rate-limit and availability problems while developing and testing the feature. These problems required further debugging and changes to the way requests were handled, including adding retry handling for temporary service errors.
+
+Debugging was another major part of the development process. Problems were not always caused by the part of the application I was initially looking at, which meant I had to become more comfortable reading console errors, tracing problems and testing changes rather than simply assuming where the issue was.
+
+Responsive design also required more problem solving than I initially expected. Some layouts appeared correct when tested at a particular viewport size but behaved differently when the actual browser window was resized. This taught me that responsive testing needs to involve more than checking a few fixed screen sizes.
+
+### What Went Well
+
+One of the most positive aspects of the project was being able to take the concepts I had been learning and use them to create a complete application rather than isolated exercises.
+
+Creating reusable components, particularly the shared cocktail card, helped me understand the practical benefits of React. Instead of recreating the same structure for different pages, the same component could be reused with different cocktail information.
+
+I also became more confident with debugging as the project progressed. Although I still needed support when dealing with unfamiliar problems, I became better at identifying what was happening and understanding the reason behind the changes being made.
+
+The project also gave me experience of working with technologies that I had not previously used together, including React, external APIs, React Context and an AI API with a separate backend.
+
+### What I Would Do Differently
+
+If I were starting the project again, I would spend more time planning how the different parts of the application would work together before beginning development. Although the project was planned using user stories and wireframes, some technical decisions became clearer only after development had started.
+
+One decision I would reconsider is whether to use a CSS framework such as Bootstrap. I chose to build the responsive layouts mainly using my own CSS and media queries, which gave me more control over the final design but also resulted in a significant amount of time being spent working on grids, spacing, sizing and responsive behaviour. After experiencing these challenges, I can see how using Bootstrap for some of the layout and responsive structure could have made development easier and reduced some of the repetitive CSS.
+
+I would also allow more time for learning React concepts before moving into some of the more complicated features. Learning React while still developing my JavaScript knowledge sometimes made problems harder to understand because I was trying to learn several things at once.
+
+The AI bartender would also be approached differently if I were starting again. It was the most technically challenging feature and required considerably more development and debugging than I initially expected. Having a clearer understanding of the frontend, backend and API communication before beginning this feature would make the development process easier.
+
+Although I would consider using Bootstrap for some aspects of a future project, I would still want to use custom CSS where it was needed to achieve the specific visual design and user experience I wanted.
+
+### Overall Reflection
+
+Overall, After Hours has been a challenging project but has given me a much better understanding of what is involved in developing a React application.
+
+I have not reached the point where I could independently recreate the entire project from scratch, but I have developed a stronger foundation that I can continue building on. In particular, I now feel comfortable creating React components and understand why they are important when developing a React application.
+
+The project has also shown me that understanding how to debug and solve problems is just as important as knowing the syntax itself. There were many occasions where the solution was not immediately obvious, but working through these problems helped me understand the technologies better.
+
+Going forward, I would like to continue developing smaller React projects so that I can practise the concepts I have learned without relying as heavily on guidance. The React Dummies Guide I created alongside this project will give me a practical reference when doing this. My aim is to gradually become more confident at solving problems independently while continuing to use the skills and understanding I developed during After Hours.
+
+
+## AI Mentoring Evidence
+
+AI was used as a learning and development aid throughout this project. It helped me understand unfamiliar React concepts, troubleshoot problems and explore ways to implement new functionality. I reviewed and tested the suggested solutions before incorporating them into my project.
+
+### Understanding React Components and Props
+
+AI helped me understand how React components communicate through props and how to apply these concepts when building reusable components.
+
+![React components and props — evidence 1](src/assets/readme/ai-evidence/react-components-props-1.png)
+
+![React components and props — evidence 2](src/assets/readme/ai-evidence/react-components-props-2.png)
+
+### Developing My Ingredients
+
+AI helped me work through the process of retrieving cocktail data from TheCocktailDB and filtering recipes based on ingredients selected by the user.
+
+![My Ingredients API development](src/assets/readme/ai-evidence/my-ingredients-api.png)
+
+### Securing the Gemini API
+
+AI helped me understand why API keys should not be exposed in frontend code and how to use a Node/Express backend to handle Gemini API requests.
+
+![Gemini API security — evidence 1](src/assets/readme/ai-evidence/gemini-api-security-1.png)
+
+![Gemini API security — evidence 2](src/assets/readme/ai-evidence/gemini-api-security-2.png)
