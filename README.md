@@ -253,6 +253,12 @@ The layouts were adjusted at different breakpoints to improve positioning, spaci
 
 Responsive testing was carried out throughout development, allowing issues to be identified and corrected as individual pages were completed.
 
+### Project Management
+
+GitHub Projects was used to organise user stories, plan development tasks and track progress throughout the project.
+
+[View the After Hours Project Board](https://github.com/users/HollyBlue87/projects/5)
+
 ## Technologies Used
 
 ### Languages
