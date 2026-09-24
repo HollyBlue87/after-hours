@@ -13,6 +13,7 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail, setIsBartender
         }
     ]);
     const [userMessage, setUserMessage] = useState("");
+    const [showQuickPicks, setShowQuickPicks] = useState(false);
     const [isThinking, setIsThinking] = useState(false);
     const [thinkingMessage, setThinkingMessage] = useState("Bartender is thinking...");
     const chatMessagesRef = useRef(null);
@@ -252,15 +253,26 @@ function Bartender({ setIsBartenderOpen, mode, bartenderCocktail, setIsBartender
             {mode === "recommend" && (
                 <>
                     <div className="quick-picks">
-                        <h3>Quick picks</h3>
+                        <button
+                            type="button"
+                            className="quick-picks-toggle"
+                            onClick={() => setShowQuickPicks(!showQuickPicks)}
+                            aria-expanded={showQuickPicks}
+                        >
+                            {showQuickPicks ? "− Hide Quick Picks" : "+ Show Quick Picks"}
+                        </button>
 
-                        <div className="drink-type-options">
-                            {selectDrink}
-                        </div>
+                        {showQuickPicks && (
+                            <div className="quick-picks-content">
+                                <div className="drink-type-options">
+                                    {selectDrink}
+                                </div>
 
-                        <div className="spirit-options">
-                            {selectSpirit}
-                        </div>
+                                <div className="spirit-options">
+                                    {selectSpirit}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </>
             )}

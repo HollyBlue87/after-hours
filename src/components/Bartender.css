@@ -141,7 +141,7 @@
 --------------------------------- */
 
 .chat-messages {
-    height: 230px;
+    height: 310px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -266,6 +266,18 @@
 .surprise-me-button:hover {
     background-color: var(--gold);
     color: var(--primary-bg);
+}
+
+
+/* Collapsible Quick Picks */
+
+.quick-picks-toggle {
+    display: block;
+    margin: 0.5rem auto 1rem;
+}
+
+.quick-picks-content {
+    padding-top: 0.5rem;
 }
 
 /* ------------------------------
